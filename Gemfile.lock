@@ -323,6 +323,7 @@ GEM
     orm_adapter (0.5.0)
     parslet (1.7.0)
       blankslate (>= 2.0, <= 4.0)
+    pg (0.18.2)
     rack (1.5.5)
     rack-protection (1.5.3)
       rack
@@ -496,7 +497,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
     stomp (1.3.4)
     sufia (6.0.0)
       blacklight (~> 5.12)
@@ -577,13 +577,13 @@ DEPENDENCIES
   jettywrapper
   jquery-rails
   kaminari!
+  pg
   rails (= 4.1.8)
   rsolr (~> 1.0.6)
   rspec-rails
   sass-rails (~> 5.0.3)
   sdoc (~> 0.4.0)
   spring
-  sqlite3
   sufia (= 6.0.0)
   therubyracer
   turbolinks
