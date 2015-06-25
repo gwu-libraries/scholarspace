@@ -1,38 +1,4 @@
-	config/solr.yml
-	jetty/
-
-nothing added to commit but untracked files present
-kerchner@gwsufia-test2:/opt/scholarspace$ git status -s
-?? config/database.yml
-?? config/fedora.yml
-?? config/solr.yml
-?? jetty/
-kerchner@gwsufia-test2:/opt/scholarspace$ git status
-On branch master
-Your branch is ahead of 'origin/master' by 2 commits.
-  (use "git push" to publish your local commits)
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	config/database.yml
-	config/fedora.yml
-	config/solr.yml
-	jetty/
-
-nothing added to commit but untracked files present (use "git add" to track)
-kerchner@gwsufia-test2:/opt/scholarspace$ cp README.md README.sav
-kerchner@gwsufia-test2:/opt/scholarspace$ git reset --hard
-HEAD is now at 79a408d Merge branch 'master' of https://github.com/gwu-libraries/scholarspace
-kerchner@gwsufia-test2:/opt/scholarspace$ git status -s
-?? README.sav
-?? config/database.yml
-?? config/fedora.yml
-?? config/solr.yml
-?? jetty/
-kerchner@gwsufia-test2:/opt/scholarspace$ vi README.md
-
-# scholarspace
+# ScholarSpace
 
 This is the (new) repository for the George Washington University Libraries' Sufia-based
 application.  The repository for the Sufia 4 based app is located at
