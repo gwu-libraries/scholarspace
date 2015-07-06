@@ -41,7 +41,6 @@ Installation
         % sudo su - postgres
         (postgres)% psql
         postgres=# create user YOURSFMDBUSERNAME with createdb password 'YOURSFMDBPASSWORD';
-        CREATE ROLE
         postgres=# \q
         (postgres)% createdb -O YOURSFMDBUSERNAME YOURDEVDBNAME
         (postgres)% createdb -O YOURSFMDBUSERNAME YOURTESTDBNAME
@@ -99,7 +98,8 @@ Installation
 
 ### Start a Redis RESQUE pool
 
-        & sudo chmod a+x script/restart_resque.sh
+        % cd scholarspace
+        % sudo chmod a+x script/restart_resque.sh
         % script/restart_resque.sh
 
 ### Run the application
