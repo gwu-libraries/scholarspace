@@ -123,7 +123,7 @@ Installation with Apache, Tomcat 7, and Passenger
         % rvm install ruby-2.2.1
         % sudo nano /etc/group
         
-        Add users to the rvm group.
+        Add users to the rvm group
 
 * Install Rails
 
@@ -174,6 +174,13 @@ Installation with Apache, Tomcat 7, and Passenger
         % wget https://repo1.maven.org/maven2/org/fcrepo/fcrepo-webapp/4.2.0/fcrepo-webapp-4.2.0.war
         % cp fcrepo-webapp-4.2.0.war /var/lib/tomcat7/webapps/fcrepo-webapp-4.2.0.war
         Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo-webapp-4.2.0/WEB-INF/web.xml with the one from the repo
+
+* Setup authentication to fcrepo
+
+        % cd /etc/tomcat7
+        Replace tomcat_users.xml with the tomcat_users.xml file from the repo
+        % sudo nano tomcat_users.xml
+        Replace the "dummypasswords" with your secure passwords
 
 * Restart Tomcat7 Server
 
