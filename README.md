@@ -1,7 +1,7 @@
 # ScholarSpace
 
-This is the (new) repository for the George Washington University Libraries' Sufia-based
-application.  The repository for the Sufia 4 based app is located at
+This is the (new) repository for the George Washington University Libraries' Sufia 6.0 based
+application.  The repository for the Sufia 4.0 based app is located at
 https://github.com/gwu-libraries/gw-sufia/ .
 
 Installation
