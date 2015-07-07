@@ -137,6 +137,7 @@ Installation with Apache, Tomcat 7, and Passenger
         % mkdir /opt/install
         % mkdir /opt/fuseki
         % mkdir /opt/xsendfile
+        % sudo mkdir /var/log/solr
         
 * Create the necessary user groups and assign folder permissions
 
@@ -147,6 +148,7 @@ Installation with Apache, Tomcat 7, and Passenger
         % sudo chown tomcat7:tomcat7 /opt/fedora
         % sudo chown $USER:scholarspace /opt/scholarspace
         % sudo chown www-data:www-data /opt/xsendfile
+        % sudo chown tomcat7:tomcat7 /var/log/solr
         
 * Setup Solr
 
@@ -159,7 +161,13 @@ Installation with Apache, Tomcat 7, and Passenger
         Replace the schema.xml and solrconfig.xml in /opt/solr/collection1/conf/ with the ones from the repo
         Replace the solr.xml file in /opt/solr with the one from the repo
         % sudo cp dist/solr-4.10.4.war /var/lib/tomcat7/webapps/solr.war
-        % sudo cp example/lib/ext/* /var/lib/tomcat7/webapps/solr/WEB-INF/lib
+        % sudo cp -R example/lib/ext/* /var/lib/tomcat7/webapps/solr/WEB-INF/lib
+        % sudo cp -R contrib /var/lib/tomcat7/webapps/solr/WEB-INF/lib/
+        Create the log4j.properties file in /var/lib/tomcat7/webapps/solr/WEB-INF/classes/ with the one from the repo
+        
+        Setup log rotation by creating a /etc/logrotate.d/solr file with the following:
+        % sudo nano /etc/logrotate.d/solr
+        { copytruncate daily rotate 5 compress missingok create 640 tomcat7 tomcat7 }
         
 * Setup fcrepo-message-consumer
 
