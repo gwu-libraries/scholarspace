@@ -36,12 +36,18 @@ Installation
         % bundle install
         % rails generate sufia:install -f
 
-* Create a postgresql user and three databases (e.g. scholarspace_dev, scholarspace_test, scholarspace_prod)
+* Create a postgresql user
 
         % sudo su - postgres
         (postgres)% psql
         postgres=# create user YOURSFMDBUSERNAME with createdb password 'YOURSFMDBPASSWORD';
+
+  The result should be:
+
         CREATE ROLE
+
+* Create three databases (e.g. scholarspace_dev, scholarspace_test, scholarspace_prod)
+
         postgres=# \q
         (postgres)% createdb -O YOURSFMDBUSERNAME YOURDEVDBNAME
         (postgres)% createdb -O YOURSFMDBUSERNAME YOURTESTDBNAME
@@ -99,7 +105,8 @@ Installation
 
 ### Start a Redis RESQUE pool
 
-        & sudo chmod a+x script/restart_resque.sh
+        % cd scholarspace
+        % sudo chmod a+x script/restart_resque.sh
         % script/restart_resque.sh
 
 ### Run the application
