@@ -158,6 +158,8 @@ Installation with Apache, Tomcat 7, and Passenger
         % cd solr-4.10.4
         % sudo cp -R example/solr/* /opt/solr
         % sudo cp -R dist /opt/solr
+        % sudo cp -R /opt/solr/collection1 /opt/solr/development-core
+        % sudo cp -R /opt/solr/collection1 /opt/solr/test-core
         Replace the schema.xml and solrconfig.xml in /opt/solr/collection1/conf/ with the ones from the repo
         Replace the solr.xml file in /opt/solr with the one from the repo
         % sudo cp dist/solr-4.10.4.war /var/lib/tomcat7/webapps/solr.war
