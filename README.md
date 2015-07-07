@@ -1,6 +1,6 @@
 # ScholarSpace
 
-This is the (new) repository for the George Washington University Libraries' Sufia 6.0 based
+This is the (new) repository for the George Washington University Libraries' Sufia 6.1 based
 application.  The repository for the Sufia 4.0 based app is located at
 https://github.com/gwu-libraries/gw-sufia/ .
 
@@ -22,7 +22,7 @@ Installation
 
 * Install Rails
 
-        % gem install rails -v 4.1.8
+        % gem install rails -v 4.2.3
 
 ### Install
 
@@ -41,7 +41,13 @@ Installation
         % sudo su - postgres
         (postgres)% psql
         postgres=# create user YOURSFMDBUSERNAME with createdb password 'YOURSFMDBPASSWORD';
+
+* The result should be:
+
         CREATE ROLE
+        
+* Create three databases (e.g. scholarspace_dev, scholarspace_test, scholarspace_prod)
+
         postgres=# \q
         (postgres)% createdb -O YOURSFMDBUSERNAME YOURDEVDBNAME
         (postgres)% createdb -O YOURSFMDBUSERNAME YOURTESTDBNAME
@@ -134,7 +140,7 @@ Installation with Apache, Tomcat 7, and Passenger
 
 * Install Rails
 
-        % gem install rails -v 4.2.0
+        % gem install rails -v 4.2.3
         
 * Create the necessary directories
 
