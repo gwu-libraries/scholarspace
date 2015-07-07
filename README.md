@@ -136,6 +136,7 @@ Installation with Apache, Tomcat 7, and Passenger
         % mkdir /opt/fedora
         % mkdir /opt/install
         % mkdir /opt/fuseki
+        % mkdir /opt/xsendfile
         
 * Create the necessary user groups and assign folder permissions
 
@@ -145,6 +146,7 @@ Installation with Apache, Tomcat 7, and Passenger
         % sudo chown tomcat7:tomcat7 /opt/solr
         % sudo chown tomcat7:tomcat7 /opt/fedora
         % sudo chown $USER:scholarspace /opt/scholarspace
+        % sudo chown www-data:www-data /opt/xsendfile
         
 * Setup Solr
 
@@ -263,3 +265,47 @@ Installation with Apache, Tomcat 7, and Passenger
         & sudo chmod a+x script/restart_resque.sh
         % script/restart_resque.sh
 
+### Configure Passenger and Apache2
+
+* Setup the Passenger
+
+        % gem install passenger
+        % passenger-install-apache2-module
+        Select Ruby from the list of languages
+        
+* Edit Apache for Passenger
+
+        % sudo nano /etc/apache2/conf-available/passenger.conf
+
+   LoadModule passenger_module /usr/local/rvm/gems/ruby-2.2.1/gems/passenger-5.0.13/buildout/apache2/mod_passenger.so
+   <IfModule mod_passenger.c>
+     PassengerRoot /usr/local/rvm/gems/ruby-2.2.1/gems/passenger-5.0.13
+     PassengerDefaultRuby /usr/local/rvm/gems/ruby-2.2.1/wrappers/ruby
+   </IfModule>
+   
+* Enable the passenger.conf file     
+
+        % sudo a2enconf passenger.conf
+        % sudo service apache2 restart
+
+* Create and enable an Apache2 virtual host
+
+        % Copy the scholarspace.conf file from the repo to /etc/apache2/site-available/scholarspace.conf
+        % sudo a2ensite scholarspace.conf
+        
+* Install mod_xsendfile
+
+        % cd /opt/install
+        % git clone https://github.com/nmaier/mod_xsendfile.git
+        % cd mod_xsendfile
+        % sudo apxs2 -cia mod_xsendfile.c
+        % sudo service apache2 restart
+
+### Final Deployment
+
+* Prepare databases and assets for production
+
+        % cd /opt/scholarspace
+        % bundle exec rake db:migrate RAILS_ENV=production
+        % bundle exec rake assets:precompile RAILS_ENV=production 
+        % sudo service apache2 restart
