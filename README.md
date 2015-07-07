@@ -22,7 +22,7 @@ Installation
 
 * Install Rails
 
-        % gem install rails -v 4.1.8
+        % gem install rails -v 4.2.3
 
 ### Install
 
@@ -111,5 +111,5 @@ Installation
 
 ### Run the application
 
-        % rails s -p <PORT NUMBER>
+        % rails s -p <PORT NUMBER> -b 0.0.0.0
 
