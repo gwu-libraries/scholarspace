@@ -111,11 +111,17 @@ Installation with Apache, Tomcat 7, and Passenger
 
 ### Dependencies
 
-* Install ubuntu package dependencies:
+* Install ubuntu 14.04 LTS package dependencies:
 
         % sudo apt-get update
-        % sudo apt-get install git postgresql libpq-dev redis-server unzip openjdk-7-jre clamav-daemon curl imagemagick libapache2-mod-shib2, tomcat7
-        
+        % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2, tomcat7
+
+* Install Java 8 for 14.04
+        % sudo apt-add-repository ppa:webupd8team/java
+        % sudo apt-get update
+        % sudo apt-get install oracle-java8-installer
+        % sudo apt-get install oracle-java8-set-default
+       
 * Install RVM for multi-users (for installation via SSL and other RVM installation information, refer to https://rvm.io/rvm/install) Installs RVM to /usr/local/rvm
 
         % curl -L https://get.rvm.io | sudo bash -s stable
@@ -149,6 +155,9 @@ Installation with Apache, Tomcat 7, and Passenger
         % sudo chown $USER:scholarspace /opt/scholarspace
         % sudo chown www-data:www-data /opt/xsendfile
         % sudo chown tomcat7:tomcat7 /var/log/solr
+        
+* Setup tomcat7
+        Replace the /etc/default/tomcat7 file with the tomcat7 file from the repo.  This will set solr Home, fcrepo home, and java path.
         
 * Setup Solr
 
