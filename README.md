@@ -117,6 +117,7 @@ Installation with Apache, Tomcat 7, and Passenger
         % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2, tomcat7
 
 * Install Java 8 for 14.04
+
         % sudo apt-add-repository ppa:webupd8team/java
         % sudo apt-get update
         % sudo apt-get install oracle-java8-installer
