@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '83ffd0ee574d2e87f06e2d32efafed47dab3ca2efe6978e50fb1d77e28f27a875e0d69c5019eeb628aa9e7bbd163aedc00da90260db82b4041bad2a9808a1dcc'
+  # config.secret_key = '04083d7212b11d02dfde5d834ab7a90cecb480eef93e98f47b5ddcd9f6be7ebc9b09b5d05553a254b113efc784e0623140de0a61484094f903ea01722f72c4d8'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -239,6 +239,21 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+ config.omniauth :shibboleth, {
+                         :uid => 'persistent=id',
+                         :info_fields => {
+                                 :first_name => 'givenName',
+                                 :last_name => 'sn',
+                                 :email => 'mail'
+                         },
+                         :extra_fields => [
+                                 :affiliation,
+                                 :"Shib-Session-ID",
+				 :member
+
+                         ],
+                         :debug => false
+                  }  
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

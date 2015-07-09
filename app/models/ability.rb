@@ -17,4 +17,9 @@ class Ability
     #   can [:create], ActiveFedora::Base
     # end
   end
+
+  def admin_user?
+    user_groups.include? 'CN=GWL-SufiaAdmins-GG,OU=Groups,OU=GWL,OU=GWResources,DC=eadtst,DC=gwu,DC=edu'
+  end
+
 end
