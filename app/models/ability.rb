@@ -19,7 +19,7 @@ class Ability
   end
 
   def admin_user?
-    user_groups.include? 'CN=GWL-SufiaAdmins-GG,OU=Groups,OU=GWL,OU=GWResources,DC=eadtst,DC=gwu,DC=edu'
+    user_groups.include? 'InsertYourGroupHere'
   end
 
 end
