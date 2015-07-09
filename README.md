@@ -107,7 +107,8 @@ Installation
 
         % cd scholarspace
         % sudo chmod a+x script/restart_resque.sh
-        % script/restart_resque.sh
+        % script/restart_resque.sh development
+   (or ```script/restart_resque.sh production``` as the case may be)
 
 ### Run the application
 
