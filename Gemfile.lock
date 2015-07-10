@@ -29,17 +29,17 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    active-fedora (9.1.2)
-      active-triples (~> 0.6.0)
+    active-fedora (9.2.0)
+      active-triples (~> 0.7.1)
       activesupport (>= 4.1.0)
       deprecation
-      ldp (~> 0.3.0)
+      ldp (~> 0.3.1)
       linkeddata
       nom-xml (>= 0.5.1)
       om (~> 3.1)
       rdf-rdfxml (~> 1.1.0)
       rsolr (~> 1.0.10)
-    active-triples (0.6.1)
+    active-triples (0.7.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       deprecation (~> 0.1)
@@ -58,7 +58,7 @@ GEM
       activemodel (= 4.2.3)
       activesupport (= 4.2.3)
       arel (~> 6.0)
-    activerecord-import (0.9.0)
+    activerecord-import (0.10.0)
       activerecord (>= 3.0)
     activeresource (4.0.0)
       activemodel (~> 4.0)
@@ -188,6 +188,7 @@ GEM
       signet (~> 0.6)
     haml (4.0.6)
       tilt
+    hashie (3.4.2)
     htmlentities (4.3.4)
     httmultiparty (0.3.16)
       httparty (>= 0.7.3)
@@ -197,7 +198,7 @@ GEM
     httparty (0.13.5)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    hydra-access-controls (9.1.4)
+    hydra-access-controls (9.2.0)
       active-fedora (~> 9.0)
       activesupport (~> 4.0)
       blacklight (~> 5.10)
@@ -211,8 +212,9 @@ GEM
       blacklight (~> 5.10)
       deprecation (~> 0.1)
       hydra-head (~> 9.1)
-    hydra-core (9.1.4)
-      hydra-access-controls (= 9.1.4)
+    hydra-core (9.2.0)
+      active-fedora (~> 9.1)
+      hydra-access-controls (= 9.2.0)
       jettywrapper (>= 2.0.0)
       rails (~> 4.0)
     hydra-derivatives (1.1.0)
@@ -229,9 +231,9 @@ GEM
       simple_form (~> 3.1.0)
     hydra-file_characterization (0.3.1)
       activesupport (>= 3.0.0)
-    hydra-head (9.1.4)
-      hydra-access-controls (= 9.1.4)
-      hydra-core (= 9.1.4)
+    hydra-head (9.2.0)
+      hydra-access-controls (= 9.2.0)
+      hydra-core (= 9.2.0)
       rails (>= 3.2.6)
     hydra-role-management (0.2.1)
       blacklight
@@ -337,6 +339,11 @@ GEM
       activesupport
       nokogiri (>= 1.4.2)
       solrizer (~> 3.3)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-shibboleth (1.2.1)
+      omniauth (>= 1.0.0)
     openseadragon (0.2.0)
       rails (> 3.2.0)
     orm_adapter (0.5.0)
@@ -608,6 +615,7 @@ DEPENDENCIES
   jettywrapper
   jquery-rails
   kaminari!
+  omniauth-shibboleth
   pg
   rails (~> 4.2)
   rsolr (~> 1.0.6)
