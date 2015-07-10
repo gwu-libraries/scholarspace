@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   if  Rails.env.production?
-    devise :database_authenticatable, :omniauthable, :omniauth_providers => [:shibboleth]
+    devise :database_authenticatable, :trackable, :omniauthable, :omniauth_providers => [:shibboleth]
   else
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable
@@ -30,21 +30,35 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth[:info][:email]
-      user.display_name = auth[:info][:first_name] + auth[:info][:last_name]
-      user.affiliation = auth[:extra][:raw_info][:affiliation]
-      user.shibboleth_id = auth[:extra][:raw_info][:"Shib-Session-ID"]
-      user.group_list = auth[:extra][:raw_info][:member]
-      user.groups_last_update = Time.now
-    end
+    user = find_by(provider: auth.provider, uid: auth.uid) || new(uid: auth.uid, provider: auth.provider)
+    user.update!(email: auth.info.email,
+                 display_name: auth.info.first_name + auth.info.last_name,
+                 affiliation: auth.extra.raw_info.affiliation,
+		 group_list: auth.extra.raw_info.isMemberOf,
+		 :groups_last_update => DateTime.current,
+		 :shibboleth_id => auth[:extra][:raw_info][:"Shib-Session-ID"])
+    user
   end
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.shibboleth_data"] && session["devise.shibboleth_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
-    end
-  end
+
+#  def self.from_omniauth(auth)
+#    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+#      user.update_attributes \
+#      user.email = auth[:info][:email]
+#      user.display_name = auth[:info][:first_name] + auth[:info][:last_name]
+#      user.affiliation = auth[:extra][:raw_info][:affiliation]
+#      user.shibboleth_id = auth[:extra][:raw_info][:"Shib-Session-ID"]
+#      user.group_list = auth[:extra][:raw_info][:isMemberOf]
+#      user.groups_last_update = Time.now
+#      user.last_sign_in_at = Time.now
+#    end
+#  end
+
+#  def self.new_with_session(params, session)
+#    super.tap do |user|
+#      if data = session["devise.shibboleth_data"] && session["devise.shibboleth_data"]["extra"]["raw_info"]
+#        user.email = data["email"] if user.email.blank?
+#      end
+#    end
+#  end
 
 end

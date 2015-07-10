@@ -13,13 +13,13 @@ class Ability
 
     # Limits creating new objects to a specific group
     #
-    # if user_groups.include? 'special_group'
-    #   can [:create], ActiveFedora::Base
-    # end
+    #if user_groups.include? 'SomeGroupHere'
+    #  can [:create], ActiveFedora::Base
+    #end
   end
 
   def admin_user?
-    user_groups.include? 'CN=GWL-SufiaAdmins-GG,OU=Groups,OU=GWL,OU=GWResources,DC=eadtst,DC=gwu,DC=edu'
+    user_groups.include? 'SomeGroupHere'
   end
 
 end

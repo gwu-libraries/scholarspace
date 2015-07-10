@@ -14,3 +14,26 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore locally-specific config files
+config/database.yml
+config/fedora.yml
+config/solr.yml
+config/redis.yml
+config/blacklight.yml
+config/devise.yml
+config/hydra-ldap.yml
+config/browse_everything_providers.yml
+
+# Ignore this file for security reasons
+config/initializers/secret_token.rb
+
+# Ignore jetty
+jetty/
+
+# Ignore local SSL certificates and keys
+.ssl/
+
+# Ignore temp files
+public/system
+public/uploads
