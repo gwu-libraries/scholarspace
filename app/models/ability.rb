@@ -17,4 +17,9 @@ class Ability
     #   can [:create], ActiveFedora::Base
     # end
   end
+
+  def admin_user?
+    user_groups.include? 'InsertYourGroupHere'
+  end
+
 end
