@@ -34,7 +34,6 @@ Installation
 
         % cd scholarspace
         % bundle install
-        % rails generate sufia:install -f
 
 * Create a postgresql user
 
@@ -90,6 +89,8 @@ Installation
 * Get a copy of hydra-jetty (if installing solr and fedora locally)
 
   (If jetty is already running on the same port (default 8983), it will need to be stopped using sudo service jetty stop)
+  
+  Hydra-Jetty requires Java 8.  These [Java 8 installation steps for Ubuntu Linux](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html) are [recommended by ubuntu.com](https://help.ubuntu.com/community/Java#Oracle_Java_8) . 
 
         % rake jetty:clean
         % rake sufia:jetty:config
