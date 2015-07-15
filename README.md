@@ -22,7 +22,7 @@ Installation
 
 * Install Rails
 
-        % gem install rails -v 4.2.3
+        % gem install rails -v 4.2.3 -N
 
 ### Install
 
