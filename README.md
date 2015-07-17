@@ -1,4 +1,5 @@
-# ScholarSpace
+# GW ScholarSpace [![Build Status](https://travis-ci.org/gwu-libraries/scholarspace.png?branch=master)](https://travis-ci.org/gwu-libraries/scholarspace)
+=================
 
 This is the (new) repository for the George Washington University Libraries' Sufia-based
 application.  The repository for the Sufia 4 based app is located at
