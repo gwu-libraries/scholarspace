@@ -11,6 +11,8 @@ before_script:
   - "cp config/database.yml.travis config/database.yml"
   - "cp config/fedora.yml.template config/fedora.yml"
   - "cp config/solr.yml.template config/solr.yml"
+  - "cp config/blacklight.yml.template config/blacklight.yml"
+  - "cp config/secrets.yml.template config/secrets.yml"
   - "bundle exec rake gwss:generate_secret"
 notifications:
   email:
