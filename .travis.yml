@@ -15,7 +15,7 @@ before_script:
   - "cp config/solr.yml.template config/solr.yml"
   - "cp config/blacklight.yml.template config/blacklight.yml"
   - "cp config/secrets.yml.template config/secrets.yml"
-  - "bundle exec rake gw-sufia:generate_secret"
+  - "bundle exec rake gwss:generate_secret"
 notifications:
   email:
     recipients:

@@ -1,0 +1,1 @@
+Scholarspace::Application.config.secret_key_base = '9f768b35a76aa84cf237f2867a7def6d4698113231c41f2533fe8f31f7f2e36fd6d9e5bd43b311d67cc11eb2811539207bba2f8d833ce5d40d849acde5a3bf13'
