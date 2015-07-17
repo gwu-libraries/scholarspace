@@ -1,0 +1,23 @@
+language: ruby
+bundler_args: --without development
+rvm:
+  - "2.2.1"
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - JS=true
+  - CONTINUOUS_INTEGRATION=true
+before_script:
+  - "cp config/database.yml.travis config/database.yml"
+  - "cp config/fedora.yml.template config/fedora.yml"
+  - "cp config/solr.yml.template config/solr.yml"
+  - "bundle exec rake gwss:generate_secret"
+notifications:
+  email:
+    recipients:
+      - "kerchner@gwu.edu"
+    on_success: "change"
+    on_failure: "always"
+  flowdock: a1dbebd53392964fc6f4b82d7fc1a757
+services:
+  - redis-server
