@@ -16,6 +16,7 @@
 /tmp
 
 # Ignore locally-specific config files
+config/analytics.yml
 config/database.yml
 config/fedora.yml
 config/solr.yml
