@@ -41,6 +41,10 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'sufia', '6.3.0'
+
+# Use Omniauth-Shibboleth for authentication federation
+gem 'omniauth-shibboleth'
+
 gem 'kaminari', github: 'jcoyne/kaminari', branch: 'sufia'  # required to handle pagination properly in dashboard. See https://github.com/amatsuda/kaminari/pull/322
 
 

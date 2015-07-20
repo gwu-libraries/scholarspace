@@ -22,5 +22,11 @@ class Ability
     can :view_share_work, [GenericFile]
     can :create, [GenericFile] if admin_user?
   end
+
+  private
   
+  def admin_user?
+    user_groups.include? 'special_group'
+  end
+
 end
