@@ -21,4 +21,13 @@
 
 en:
   sufia:
-    product_name: "GW ScholarSpace"
+    product_name:           "GW ScholarSpace"
+    institution_name:       "The George Washington University"
+    institution_name_full:  "George Washington University"
+    search:
+      form:
+        option:
+          all:
+            label_long:     "All of GW ScholarSpace"
+    background_attribution: "Background image courtesy of The George Washington University"
+    deposit_agreement:      "GW ScholarSpace's Deposit Agreement"
