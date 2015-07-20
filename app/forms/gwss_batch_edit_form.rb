@@ -1,0 +1,2 @@
+class GwssBatchEditForm < GwssFileEditForm
+end
