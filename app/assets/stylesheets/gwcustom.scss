@@ -1,0 +1,114 @@
+$banner-blue: #005581;
+$banner-blue-dark: #004165;
+$banner-blue-light: #2971a7;
+
+/* fixes borders on narrower views */
+@media screen and (max-width:768px) {
+  #masthead_controls .navbar li {
+    border: 0 !important;
+  }
+}
+
+/* changes nav to prevent stacking in handheld */
+  #masthead_controls .navbar li {
+    display: inline-block !important;
+  }
+
+/* adjusts padding of right column in masthead */
+  #masthead .col-sm-3 {padding-left:0 !important;}
+
+/* adjust overflow on logged in user box now that we've narrowed the available space */
+#user_utility_links #dashboard_link {
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* GW colors */
+#masthead {background: $banner-blue-dark !important;}
+#masthead_controls {border: 0 !important; background: $banner-blue-light !important;}
+#masthead_controls .navbar li {border: 0 !important; font-size: 1.3em;}
+#masthead_controls .navbar .active > a {/* background: $banner-blue-dark !important;*/ }
+#masthead_controls .navbar {background: $banner-blue-light !important;}
+#masthead_controls .navbar a {background: $banner-blue-light !important;}
+#masthead_controls .navbar a:hover {background: $banner-blue-dark !important;}
+#footer {background: $banner-blue-dark !important;}
+
+/* Buttons */
+.add, .btn-primary {
+  background-color: $banner-blue-light !important;
+  border-color: $banner-blue-light !important;
+}
+#masthead_controls #search-submit-header {
+  /* reiterating Sufia default to override ge custom button styling above */
+  background-color: #333 !important;
+  border-top: 1px solid #CECDCD !important;
+  border-bottom: 1px solid #CECDCD !important;
+}
+.add:hover, .add:focus, .btn-primary:hover, .btn-primary:focus {
+  color: $banner-blue-light !important;
+  background-color: #fff !important;
+}
+
+/* custom splash image */
+#home_header {
+  background-image: url(/assets/gw-scholarspace-1.jpg) !important;
+  background-position: 0% 0% !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 8px solid #E1E1E1;
+  border-bottom: 8px solid #E1E1E1;
+}
+
+/* logo */
+#logo img {
+  width: 200px;
+  margin: -20px 1em 0;
+}
+
+.masthead-logo-title {
+  padding-top:.8em;
+}
+
+#masthead .institution_name {
+  white-space: nowrap;
+}
+
+#content-wrapper #content {/*padding-top:0;*/} 
+
+@media screen and (max-width:1170px) {
+  #user_utility_links #dashboard_link {max-width: 50%;}
+  #masthead .institution_name {
+  }
+  #logo img {/*margin-top: .5em;*/}
+  #masthead .login_button {margin-right:.5em;}
+}
+@media screen and (max-width:1024px) {
+  #masthead {min-height: 6.5em !important;}
+  #masthead .institution_name {font-size: 3em !important;}
+  #logo img {width: 140px; margin-top: -15px;}
+  .masthead-logo-title {padding-top:.75em;}
+  #user_utility_links #dashboard_link {max-width: 40%;}
+}
+@media screen and (max-width:766px) {
+  #logo img {display:none;}
+  #masthead_controls .navbar {margin-bottom: -6px !important;}
+}
+@media screen and (max-width:640px) {
+  #masthead .institution_name {font-size:2em !important; margin-left:0 !important;}
+  .masthead-logo-title {margin-top: .75em;}
+  #masthead .login_button {margin-right:.1em;}
+}
+
+/* Profile page */
+.profile i {padding-right:.4em !important;}
+.profile .col-xs-3 {overflow: hidden;
+  h3 {font-size:18px; font-weight:400;}
+}
+
+/* tabbed content */
+.tab-content #contributions {padding-top:.5em !important;}
+
+/* Footer */
+#footer a {color:#fff;}
+#footer a:hover {text-decoration:underline;}
