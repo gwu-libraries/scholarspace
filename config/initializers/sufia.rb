@@ -110,7 +110,7 @@ Sufia.config do |config|
   # config.noid_template = ".reeddeeddk"
 
   # Specify the prefix for Redis keys:
-  # config.redis_namespace = "sufia"
+  config.redis_namespace = "sufia"
 
   # Specify the path to the file characterization tool:
   config.fits_path = "/usr/local/bin/fits-0.8.6/fits.sh"
