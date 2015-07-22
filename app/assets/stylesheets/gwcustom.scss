@@ -32,7 +32,10 @@ $banner-blue-light: #2971a7;
 #masthead_controls .navbar-default .navbar-nav > .active > a {background: $banner-blue-light;}
 #masthead_controls .navbar-default .navbar-nav > .active > a:hover {background: $banner-blue-dark;}
 #masthead_controls .navbar {background: $banner-blue-light;}
-#masthead_controls .navbar a:link {background: $banner-blue-light;}
+#masthead_controls .navbar a:link {background: $banner-blue-light; 
+  a:visited {background: $banner-blue-light;}
+  a:hover {background: $banner-blue-dark;}
+}
 #masthead_controls .navbar a:visited {background: $banner-blue-light;}
 #masthead_controls .navbar a:hover {background: $banner-blue-dark;}
 #footer {background: $banner-blue-dark;}
@@ -43,7 +46,7 @@ $banner-blue-light: #2971a7;
   border-color: $banner-blue-light;
 }
 #masthead_controls #search-submit-header {
-  /* reiterating Sufia default to override ge custom button styling above */
+  /* reiterating Sufia default to override gw custom button styling above */
   background-color: #333;
   border-top: 1px solid #CECDCD;
   border-bottom: 1px solid #CECDCD;
@@ -80,7 +83,7 @@ $banner-blue-light: #2971a7;
 #content-wrapper #content {/*padding-top:0;*/} 
 
 @media screen and (max-width:1170px) {
-  #user_utility_links #dashboard_link {max-width: 50%;}
+  #user_utility_links #dashboard_link {/*max-width: 50%;*/}
   #masthead .institution_name {
   }
   #logo img {/*margin-top: .5em;*/}
@@ -91,7 +94,9 @@ $banner-blue-light: #2971a7;
   #masthead .institution_name {font-size: 3em;}
   #logo img {width: 140px; margin-top: -15px;}
   .masthead-logo-title {padding-top:.75em;}
-  #user_utility_links #dashboard_link {max-width: 40%;}
+}
+@media screen and (max-width:960px) {
+  #user_utility_links #dashboard_link {max-width: 60%;}
 }
 @media screen and (max-width:766px) {
   #logo img {display:none;}
@@ -108,6 +113,9 @@ $banner-blue-light: #2971a7;
 .profile .col-xs-3 {overflow: hidden;
   h3 {font-size:18px; font-weight:400;}
 }
+
+/* Upload page */
+#computer_tab i {padding-right:.4em;}
 
 /* tabbed content */
 .tab-content #contributions {padding-top:.5em;}
