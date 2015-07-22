@@ -19,6 +19,15 @@ Installation
 
         % curl -L https://get.rvm.io | bash -s stable
         % source ~/.rvm/scripts/rvm
+        
+  In the WRLC context, installing RVM via curl may require the following instead:
+  
+        % echo insecure >> ~/.curlrc
+        % \curl -sSL --CAcert /etc/ssl/certs/ca-certificates.crt --CApath /etc/ssl/certs https://get.rvm.io | bash -s stable --ruby
+        % source ~/.rvm/scripts/rvm
+        
+* Install Ruby 
+
         % rvm install ruby-2.2.1
 
 * Install Rails
