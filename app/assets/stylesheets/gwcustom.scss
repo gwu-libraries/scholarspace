@@ -60,6 +60,9 @@ $banner-blue-light: #2971a7;
 .btn.view-type-masonry {display:none !important;}
 .btn.view-type-gallery {border-top-right-radius:4px !important; border-bottom-right-radius:4px !important;}
 
+/* Fixes issue with iOS text exceeding button on some screens (iPad portrait) */
+#home_header #contribute_link {width:100%; overflow:hidden; text-overflow:ellipsis;}
+
 /* custom splash image */
 #home_header {
   background-image: url(/assets/gw-scholarspace-1.jpg);
