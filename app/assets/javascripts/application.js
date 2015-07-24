@@ -15,5 +15,5 @@
 //= require turbolinks//
 // Required by Blacklight
 //= require blacklight/blacklight
-
 //= require sufia
+//= require tagcloud.js
