@@ -16,4 +16,5 @@
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require sufia
+//= stub sufia/tagcloud.js
 //= require tagcloud.js
