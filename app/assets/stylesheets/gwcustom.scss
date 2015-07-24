@@ -5,17 +5,17 @@ $banner-blue-light: #2971a7;
 /* fixes borders on narrower views */
 @media screen and (max-width:768px) {
   #masthead_controls .navbar li {
-    border: 0 !important;
+    border: 0;
   }
 }
 
 /* changes nav to prevent stacking in handheld */
   #masthead_controls .navbar li {
-    display: inline-block !important;
+    display: inline-block;
   }
 
 /* adjusts padding of right column in masthead */
-  #masthead .col-sm-3 {padding-left:0 !important;}
+  #masthead .col-sm-3 {padding-left:0;}
 
 /* adjust overflow on logged in user box now that we've narrowed the available space */
 #user_utility_links #dashboard_link {
@@ -25,35 +25,41 @@ $banner-blue-light: #2971a7;
 }
 
 /* GW colors */
-#masthead {background: $banner-blue-dark !important;}
-#masthead_controls {border: 0 !important; background: $banner-blue-light !important;}
-#masthead_controls .navbar li {border: 0 !important; font-size: 1.3em;}
-#masthead_controls .navbar .active > a {/* background: $banner-blue-dark !important;*/ }
-#masthead_controls .navbar {background: $banner-blue-light !important;}
-#masthead_controls .navbar a {background: $banner-blue-light !important;}
-#masthead_controls .navbar a:hover {background: $banner-blue-dark !important;}
-#footer {background: $banner-blue-dark !important;}
+#masthead {background: $banner-blue-dark;}
+#masthead_controls {border: 0; background: $banner-blue-light;}
+#masthead_controls .navbar li {border: 0; font-size: 1.3em;}
+#masthead_controls .navbar li:first-child {border:0;}
+#masthead_controls .navbar-default .navbar-nav > .active > a {background: $banner-blue-light;}
+#masthead_controls .navbar-default .navbar-nav > .active > a:hover {background: $banner-blue-dark;}
+#masthead_controls .navbar {background: $banner-blue-light;}
+#masthead_controls .navbar a:link {background: $banner-blue-light; 
+  a:visited {background: $banner-blue-light;}
+  a:hover {background: $banner-blue-dark;}
+}
+#masthead_controls .navbar a:visited {background: $banner-blue-light;}
+#masthead_controls .navbar a:hover {background: $banner-blue-dark;}
+#footer {background: $banner-blue-dark;}
 
 /* Buttons */
 .add, .btn-primary {
-  background-color: $banner-blue-light !important;
-  border-color: $banner-blue-light !important;
+  background-color: $banner-blue-light;
+  border-color: $banner-blue-light;
 }
 #masthead_controls #search-submit-header {
-  /* reiterating Sufia default to override ge custom button styling above */
-  background-color: #333 !important;
-  border-top: 1px solid #CECDCD !important;
-  border-bottom: 1px solid #CECDCD !important;
+  /* reiterating Sufia default to override gw custom button styling above */
+  background-color: #333;
+  border-top: 1px solid #CECDCD;
+  border-bottom: 1px solid #CECDCD;
 }
 .add:hover, .add:focus, .btn-primary:hover, .btn-primary:focus {
-  color: $banner-blue-light !important;
-  background-color: #fff !important;
+  color: $banner-blue-light;
+  background-color: #fff;
 }
 
 /* custom splash image */
 #home_header {
-  background-image: url(/assets/gw-scholarspace-1.jpg) !important;
-  background-position: 0% 0% !important;
+  background-image: url(/assets/gw-scholarspace-1.jpg);
+  background-position: 0% 0%;
   background-repeat: no-repeat;
   background-size: cover;
   border-top: 8px solid #E1E1E1;
@@ -77,37 +83,42 @@ $banner-blue-light: #2971a7;
 #content-wrapper #content {/*padding-top:0;*/} 
 
 @media screen and (max-width:1170px) {
-  #user_utility_links #dashboard_link {max-width: 50%;}
+  #user_utility_links #dashboard_link {/*max-width: 50%;*/}
   #masthead .institution_name {
   }
   #logo img {/*margin-top: .5em;*/}
   #masthead .login_button {margin-right:.5em;}
 }
 @media screen and (max-width:1024px) {
-  #masthead {min-height: 6.5em !important;}
-  #masthead .institution_name {font-size: 3em !important;}
+  #masthead {min-height: 6.5em;}
+  #masthead .institution_name {font-size: 3em;}
   #logo img {width: 140px; margin-top: -15px;}
   .masthead-logo-title {padding-top:.75em;}
-  #user_utility_links #dashboard_link {max-width: 40%;}
+}
+@media screen and (max-width:960px) {
+  #user_utility_links #dashboard_link {max-width: 60%;}
 }
 @media screen and (max-width:766px) {
   #logo img {display:none;}
-  #masthead_controls .navbar {margin-bottom: -6px !important;}
+  #masthead_controls .navbar {margin-bottom: -6px;}
 }
 @media screen and (max-width:640px) {
-  #masthead .institution_name {font-size:2em !important; margin-left:0 !important;}
+  #masthead .institution_name {font-size:2em; margin-left:0;}
   .masthead-logo-title {margin-top: .75em;}
   #masthead .login_button {margin-right:.1em;}
 }
 
 /* Profile page */
-.profile i {padding-right:.4em !important;}
+.profile i {padding-right:.4em;}
 .profile .col-xs-3 {overflow: hidden;
   h3 {font-size:18px; font-weight:400;}
 }
 
+/* Upload page */
+#computer_tab i {padding-right:.4em;}
+
 /* tabbed content */
-.tab-content #contributions {padding-top:.5em !important;}
+.tab-content #contributions {padding-top:.5em;}
 
 /* Footer */
 #footer a {color:#fff;}
