@@ -1,14 +1,14 @@
 <div id="footer" class="container-fluid">
   <div class="row">
-  <div class="col-xs-12 col-sm-5">
+    <div class="col-xs-12 col-sm-6">
       <p class="pull-left">A service of <a href="https://github.com/projecthydra/hydra">Project Hydra</a>&nbsp;</p>
       <p>v.<%= Sufia::VERSION %></p>
-  </div>
-    <div class="col-xs-12 col-sm-7">
-      <p><%= t('sufia.footer.copyright_html') %></p>
-      <p><%= t('sufia.background_attribution') %></p>
     </div>
-  </div><!-- /footer -->
+    <div class="col-xs-12 col-sm-6">
+      <p><%= t('sufia.footer.copyright_html') %></p>
+      <p class="background-attribution"><%= t('sufia.background_attribution') %></p>
+    </div>
   </div><!-- /.row -->
+  <%= render partial: '/footer_gw_info' %>
 </div><!-- /footer -->
 

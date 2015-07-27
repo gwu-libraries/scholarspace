@@ -131,5 +131,14 @@ $banner-blue-light: #2971a7;
 .tab-content #contributions {padding-top:.5em;}
 
 /* Footer */
+#footer {font-size:.8em;}
 #footer a {color:#fff;}
 #footer a:hover {text-decoration:underline;}
+#footer p.background-attribution {margin-top:0; line-height:1em;}
+#gw-footer-info {margin-top:1em; font-size:1.1em;
+  p {margin:0;}
+}
+#gw-footer-info #footer-utility {text-align:right;}
+@media screen and (max-width:767px) {
+  #gw-footer-info #footer-utility {text-align:left;}
+}
