@@ -55,6 +55,10 @@ $banner-blue-light: #2971a7;
   color: $banner-blue-light;
   background-color: #fff;
 }
+/* Hide slideshow and masonry buttons */
+.btn.view-type-slideshow {display:none !important;}
+.btn.view-type-masonry {display:none !important;}
+.btn.view-type-gallery {border-top-right-radius:4px !important; border-bottom-right-radius:4px !important;}
 
 /* custom splash image */
 #home_header {
