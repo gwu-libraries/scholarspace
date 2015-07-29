@@ -17,4 +17,10 @@ class Ability
     #   can [:create], ActiveFedora::Base
     # end
   end
+  
+  def generic_file_abilities
+    can :view_share_work, [GenericFile]
+    can :create, [GenericFile] if admin_user?
+  end
+  
 end
