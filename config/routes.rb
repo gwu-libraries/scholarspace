@@ -14,11 +14,7 @@ Rails.application.routes.draw do
       get 'login' => 'sessions#new', as: :new_user_session
     end
   else
-    devise_for :users, {
-      :controllers => {
-        :omniauth_callbacks => 'users/omniauth_callbacks',
-      }
-    }
+    devise_for :users
   end
 
   Hydra::BatchEdit.add_routes(self)
