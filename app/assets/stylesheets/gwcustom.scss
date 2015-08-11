@@ -87,6 +87,9 @@ $banner-blue-light: #2971a7;
   white-space: nowrap;
 }
 
+/* Suppressing header login box */
+#masthead .btn-group.login_button {display:none;}
+
 #content-wrapper #content {/*padding-top:0;*/} 
 
 @media screen and (max-width:1170px) {
