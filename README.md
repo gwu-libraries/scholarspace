@@ -198,7 +198,7 @@ Installation with Apache, Tomcat 7, and Passenger
         
         Setup log rotation by creating a /etc/logrotate.d/solr file with the following:
         % sudo nano /etc/logrotate.d/solr
-        { copytruncate daily rotate 5 compress missingok create 640 tomcat7 tomcat7 }
+        /var/log/solr/solr.log { copytruncate daily rotate 5 compress missingok create 640 tomcat7 tomcat7 }
         
 * Setup fcrepo-message-consumer
 
