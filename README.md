@@ -49,7 +49,7 @@ Installation
 
         % sudo su - postgres
         (postgres)% psql
-        postgres=# create user YOURSFMDBUSERNAME with createdb password 'YOURSFMDBPASSWORD';
+        postgres=# create user YOURDBUSERNAME with createdb password 'YOURSFMDBPASSWORD';
 
   The result should be:
 
@@ -58,9 +58,9 @@ Installation
 * Create three databases (e.g. scholarspace_dev, scholarspace_test, scholarspace_prod)
 
         postgres=# \q
-        (postgres)% createdb -O YOURSFMDBUSERNAME YOURDEVDBNAME
-        (postgres)% createdb -O YOURSFMDBUSERNAME YOURTESTDBNAME
-        (postgres)% createdb -O YOURSFMDBUSERNAME YOURPRODDBNAME
+        (postgres)% createdb -O YOURDBUSERNAME YOURDEVDBNAME
+        (postgres)% createdb -O YOURDBUSERNAME YOURTESTDBNAME
+        (postgres)% createdb -O YOURDBUSERNAME YOURPRODDBNAME
         (postgres)% exit
 
 * Create the database.yml file
@@ -153,7 +153,7 @@ Installation with Apache, Tomcat 7, and Passenger
 
 * Install Rails
 
-        % gem install rails -v 4.2.3
+        % gem install rails -v 4.2.3 -N
         
 * Create the necessary directories
 
@@ -250,7 +250,7 @@ Installation with Apache, Tomcat 7, and Passenger
 
         % sudo su - postgres
         (postgres)% psql
-        postgres=# create user YOURSFMDBUSERNAME with createdb password 'YOURSFMDBPASSWORD';
+        postgres=# create user YOURDBUSERNAME with createdb password 'YOURSFMDBPASSWORD';
 
   The result should be:
 
@@ -259,9 +259,9 @@ Installation with Apache, Tomcat 7, and Passenger
 * Create three databases (e.g. scholarspace_dev, scholarspace_test, scholarspace_prod)
 
         postgres=# \q
-        (postgres)% createdb -O YOURSFMDBUSERNAME YOURDEVDBNAME
-        (postgres)% createdb -O YOURSFMDBUSERNAME YOURTESTDBNAME
-        (postgres)% createdb -O YOURSFMDBUSERNAME YOURPRODDBNAME
+        (postgres)% createdb -O YOURDBUSERNAME YOURDEVDBNAME
+        (postgres)% createdb -O YOURDBUSERNAME YOURTESTDBNAME
+        (postgres)% createdb -O YOURDBUSERNAME YOURPRODDBNAME
         (postgres)% exit
 
 * Create the database.yml file
