@@ -228,9 +228,9 @@ Installation with Apache, Tomcat 7, and Passenger
 * Install Fuseki
 
         % cd /opt/install
-        % wget http://www.apache.org/dist/jena/binaries/apache-jena-2.13.0.tar.gz
-        % tar xzvf apache-jena-2.13.0.tar.gz -C /usr/local/bin/
-        % cd /usr/local/bin/apache-jena-2.13.0
+        % wget http://www.apache.org/dist/jena/binaries/apache-jena-fuseki-2.3.0.tar.gz
+        % tar xzvf apache-jena-fuseki-2.3.0.tar.gz -C /usr/local/bin/
+        % cd /usr/local/bin/apache-jena-fuseki-2.3.0
         Start Fuseki Server
         % nohup ./fuseki-server --update --loc /opt/fuseki /fcrepo-4.2.0 &
         
@@ -244,7 +244,6 @@ Installation with Apache, Tomcat 7, and Passenger
 
         % cd scholarspace
         % bundle install
-        % rails generate sufia:install -f
 
 * Create a postgresql user
 
