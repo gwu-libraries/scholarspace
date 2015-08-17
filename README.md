@@ -203,15 +203,15 @@ Installation with Apache, Tomcat 7, and Passenger
 * Setup fcrepo-message-consumer
 
         % cd /opt/install
-        % wget http://central.maven.org/maven2/org/fcrepo/fcrepo-message-consumer-webapp/4.2.0/fcrepo-message-consumer-webapp-4.2.0.war
-        % sudo cp fcrepo-message-consumer-webapp-4.2.0.war /var/lib/tomcat7/webapps/fcrepo-message-consumer.war
+        % wget http://central.maven.org/maven2/org/fcrepo/fcrepo-message-consumer-webapp/4.3.0/fcrepo-message-consumer-webapp-4.3.0.war
+        % sudo cp fcrepo-message-consumer-webapp-4.3.0.war /var/lib/tomcat7/webapps/fcrepo-message-consumer.war
         Replace or create the indexer-core.xml file in /var/lib/tomcat7/webapps/fcrepo-message-consumer/WEB-INF/classes/spring/indexer-core.xml with the one from the repo
         
 * Setup fcrepo
 
         % cd /opt/install
-        % wget https://repo1.maven.org/maven2/org/fcrepo/fcrepo-webapp/4.2.0/fcrepo-webapp-4.2.0.war
-        % cp fcrepo-webapp-4.2.0.war /var/lib/tomcat7/webapps/fcrepo-webapp-4.2.0.war
+        % wget https://repo1.maven.org/maven2/org/fcrepo/fcrepo-webapp/4.3.0/fcrepo-webapp-4.3.0.war
+        % cp fcrepo-webapp-4.3.0.war /var/lib/tomcat7/webapps/fcrepo-webapp-4.3.0.war
         Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo-webapp-4.2.0/WEB-INF/web.xml with the one from the repo
 
 * Setup authentication to fcrepo
