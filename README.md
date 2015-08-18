@@ -122,6 +122,12 @@ Installation for Development
         % script/restart_resque.sh development
    (or ```script/restart_resque.sh production``` as the case may be)
 
+### (Optional) Populate the initial content blocks
+
+  Run the rake task that takes the content of the HTML files in config/locales/content_blocks and populates the associated content blocks.  Note that for an existing instance, running this rake task will overwrite any chnages you've made to the content blocks!
+  
+        % rake gwss:populate_content_blocks
+
 ### Run the application
 
         % rails s -p <PORT NUMBER> -b 0.0.0.0
