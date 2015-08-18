@@ -142,3 +142,7 @@ $banner-blue-light: #2971a7;
 @media screen and (max-width:767px) {
   #gw-footer-info #footer-utility {text-align:left;}
 }
+
+.table-responsive {
+  overflow-x: auto;
+}
