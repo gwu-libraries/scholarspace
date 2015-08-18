@@ -31,6 +31,7 @@ en:
             label_long:     "All of GW ScholarSpace"
     background_attribution: "Background image courtesy of The George Washington University"
     deposit_agreement:      "GW ScholarSpace's Deposit Agreement"
+    upload_url:             "https://library.gwu.edu/node/1477#"
   simple_form:
     labels:
       generic_file:
