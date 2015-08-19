@@ -328,11 +328,11 @@ Installation with Apache, Tomcat 7, and Passenger
 
         % sudo nano /etc/apache2/conf-available/passenger.conf
 
-   LoadModule passenger_module /usr/local/rvm/gems/ruby-2.2.1/gems/passenger-5.0.13/buildout/apache2/mod_passenger.so
-   <IfModule mod_passenger.c>
-     PassengerRoot /usr/local/rvm/gems/ruby-2.2.1/gems/passenger-5.0.13
-     PassengerDefaultRuby /usr/local/rvm/gems/ruby-2.2.1/wrappers/ruby
-   </IfModule>
+        LoadModule passenger_module /usr/local/rvm/gems/ruby-2.2.1/gems/passenger-5.0.13/buildout/apache2/mod_passenger.so
+        <IfModule mod_passenger.c>
+          PassengerRoot /usr/local/rvm/gems/ruby-2.2.1/gems/passenger-5.0.13
+          PassengerDefaultRuby /usr/local/rvm/gems/ruby-2.2.1/wrappers/ruby
+        </IfModule>
    
 * Enable the passenger.conf file     
 
