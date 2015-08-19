@@ -7,7 +7,7 @@ namespace 'gwss' do
     end
   end
  
-  desc "Populate (overwrite!) content blocks from config files"
+  desc "Populate (overwrite!) marketing and announcement content blocks from config files"
   task populate_content_blocks: :environment do
     path_to_content_blocks = 'config/locales/content_blocks/'
 
@@ -16,15 +16,15 @@ namespace 'gwss' do
     mt.value = f.read
     mt.save
 
-    fr = ContentBlock.find_by_name('featured_researcher')
-    f = File.open(path_to_content_blocks + 'featured_researcher.html')
-    fr.value = f.read
-    fr.save
-
     at = ContentBlock.find_by_name('announcement_text')
     f = File.open(path_to_content_blocks + 'announcement_text.html')
     at.value = f.read
     at.save
+
+    #TODO: Add featured researcher(s).  More complex as there can be
+    #      multiple featured researchers; how to load them so that the
+    #      desired one is surfaced on the home page, and other questions
+    #      would need to be addressed.
   end
 
 end
