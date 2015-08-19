@@ -326,13 +326,7 @@ Installation with Apache, Tomcat 7, and Passenger
         
 * Edit Apache for Passenger
 
-        % sudo nano /etc/apache2/conf-available/passenger.conf
-
-        LoadModule passenger_module /usr/local/rvm/gems/ruby-2.2.1/gems/passenger-5.0.13/buildout/apache2/mod_passenger.so
-        <IfModule mod_passenger.c>
-          PassengerRoot /usr/local/rvm/gems/ruby-2.2.1/gems/passenger-5.0.13
-          PassengerDefaultRuby /usr/local/rvm/gems/ruby-2.2.1/wrappers/ruby
-        </IfModule>
+  Copy the passenger.conf file from /opt/scholarspace/apache2_conf folder to /etc/apache2/conf-available/passenger.conf
    
 * Enable the passenger.conf file     
 
@@ -341,7 +335,8 @@ Installation with Apache, Tomcat 7, and Passenger
 
 * Create and enable an Apache2 virtual host
 
-        % Copy the scholarspace.conf file from the repo to /etc/apache2/site-available/scholarspace.conf
+  Copy the scholarspace.conf file from the /opt/scholarspace/apache2_conf folder to /etc/apache2/sites-available/scholarspace.conf
+  
         % sudo a2ensite scholarspace.conf
         
 * Install mod_xsendfile
