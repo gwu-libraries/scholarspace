@@ -117,7 +117,6 @@ Installation
 ### Start a Redis RESQUE pool
 
         % cd scholarspace
-        % sudo chmod a+x script/restart_resque.sh
         % script/restart_resque.sh development
    (or ```script/restart_resque.sh production``` as the case may be)
 
@@ -313,8 +312,7 @@ Installation with Apache, Tomcat 7, and Passenger
 
 ### Start a Redis RESQUE pool
 
-        & sudo chmod a+x script/restart_resque.sh
-        % script/restart_resque.sh
+        % script/restart_resque.sh production
 
 ### Configure Passenger and Apache2
 
