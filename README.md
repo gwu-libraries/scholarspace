@@ -5,8 +5,10 @@ This is the (new) repository for the George Washington University Libraries' Suf
 application.  The repository for the Sufia 4 based app is located at
 https://github.com/gwu-libraries/gw-sufia/ .
 
-Installation
-------------
+Installation for Development
+----------------------------
+
+(For a recommended Production configuration, scroll down to [Installation with Apache, Tomcat 7, and Passenger](#prod-install))
 
 ### Dependencies
 
@@ -124,7 +126,7 @@ Installation
 
         % rails s -p <PORT NUMBER> -b 0.0.0.0
 
-Installation with Apache, Tomcat 7, and Passenger
+Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
 ------------
 
 ### Dependencies
