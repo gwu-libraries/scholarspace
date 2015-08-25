@@ -160,7 +160,6 @@ Installation with Apache, Tomcat 7, and Passenger
         % mkdir /opt/solr
         % mkdir /opt/fedora
         % mkdir /opt/install
-        % mkdir /opt/fuseki
         % mkdir /opt/xsendfile
         % sudo mkdir /var/log/solr
         
@@ -225,15 +224,6 @@ Installation with Apache, Tomcat 7, and Passenger
 
         % sudo service tomcat7 restart
 
-* Install Fuseki
-
-        % cd /opt/install
-        % wget http://www.apache.org/dist/jena/binaries/apache-jena-fuseki-2.3.0.tar.gz
-        % tar xzvf apache-jena-fuseki-2.3.0.tar.gz -C /usr/local/bin/
-        % cd /usr/local/bin/apache-jena-fuseki-2.3.0
-        Start Fuseki Server
-        % nohup ./fuseki-server --update --loc /opt/fuseki /fcrepo-4.2.0 &
-        
 ### Install
 
 * Get the gw-sufia code:
