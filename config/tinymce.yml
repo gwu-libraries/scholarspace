@@ -1,5 +1,5 @@
 menubar: false
-toolbar1: styleselect | bold italic | link image | undo redo
+toolbar1: styleselect | bold italic | link | undo | redo
 toolbar2: table | fullscreen | uploadimage | code | forecolor | backcolor
 plugins:
   - table
@@ -7,3 +7,4 @@ plugins:
   - uploadimage
   - code
   - textcolor
+  - link
