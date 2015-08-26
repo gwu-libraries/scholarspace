@@ -122,6 +122,12 @@ Installation for Development
         % script/restart_resque.sh development
    (or ```script/restart_resque.sh production``` as the case may be)
 
+### (Optional) Populate the initial content blocks
+
+  Run the rake task that takes the content of the HTML files in config/locales/content_blocks and populates the associated content blocks.  Note that for an existing instance, running this rake task will overwrite any chnages you've made to the content blocks!
+  
+        % rake gwss:populate_content_blocks
+
 ### Run the application
 
         % rails s -p <PORT NUMBER> -b 0.0.0.0
@@ -293,7 +299,7 @@ Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
 
 * Run the database migrations
 
-        % rake db:migrate
+        % rake db:migrate RAILS_ENV=production
 
 * Install fits.sh (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest download)
 
@@ -306,6 +312,12 @@ Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
 ### Start a Redis RESQUE pool
 
         % script/restart_resque.sh production
+
+### (Optional) Populate the initial content blocks
+
+  Run the rake task that takes the content of the HTML files in config/locales/content_blocks and populates the associated content blocks.  Note that for an existing instance, running this rake task will overwrite any chnages you've made to the content blocks!
+
+        % rake gwss:populate_content_blocks RAILS_ENV=production
 
 ### Configure Passenger and Apache2
 
@@ -343,6 +355,5 @@ Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
 * Prepare databases and assets for production
 
         % cd /opt/scholarspace
-        % bundle exec rake db:migrate RAILS_ENV=production
-        % bundle exec rake assets:precompile RAILS_ENV=production 
+        % rake assets:precompile RAILS_ENV=production 
         % sudo service apache2 restart
