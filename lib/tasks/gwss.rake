@@ -10,15 +10,20 @@ namespace 'gwss' do
   desc "Populate (overwrite!) marketing and announcement content blocks from config files"
   task populate_content_blocks: :environment do
 
-    mt = ContentBlock.find_by_name('marketing_text')
+    marketingblock = ContentBlock.find_by_name('marketing_text')
     f = File.open("#{Rails.root}/config/locales/content_blocks/marketing.html")
-    mt.value = f.read
-    mt.save
+    marketingblock.value = f.read
+    marketingblock.save
 
-    at = ContentBlock.find_by_name('announcement_text')
+    announcementblock = ContentBlock.find_by_name('announcement_text')
     f = File.open("#{Rails.root}/config/locales/content_blocks/announcement_text.html")
-    at.value = f.read
-    at.save
+    announcementblock.value = f.read
+    announcementblock.save
+
+    aboutblock = ContentBlock.find_by_name('about_page')
+    f = File.open("#{Rails.root}/config/locales/content_blocks/about.html")
+    aboutblock.value = f.read
+    aboutblock.save
 
     #TODO: Add featured researcher(s).  More complex as there can be
     #      multiple featured researchers; how to load them so that the
