@@ -116,6 +116,16 @@ Installation for Development
         % cd fits-0.8.6
         % sudo chmod a+x fits*.sh
 
+### Configure Contact form emailing
+
+  In order to enable the contact form page to send email when the user clicks Send,
+set the following properties in config/initializers/sufia.rb :
+  * config.action_mailer.contact_email
+  * config.action_mailer.from_email
+
+Copy config/initializers/setup_mail.rb.template to config/initializers/setup_mail.rb .
+Set the SMTP credentials for the user as whom the app will send email.
+
 ### Start a Redis RESQUE pool
 
         % cd scholarspace
@@ -308,6 +318,16 @@ Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
         % sudo unzip fits.zip
         % cd fits-0.8.6
         % sudo chmod a+x fits*.sh
+
+### Configure Contact form emailing
+
+  In order to enable the contact form page to send email when the user clicks Send,
+set the following properties in config/initializers/sufia.rb :
+  * config.action_mailer.contact_email
+  * config.action_mailer.from_email
+
+Copy config/initializers/setup_mail.rb.template to config/initializers/setup_mail.rb .
+Set the SMTP credentials for the user as whom the app will send email.
 
 ### Start a Redis RESQUE pool
 

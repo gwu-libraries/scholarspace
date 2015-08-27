@@ -25,6 +25,7 @@ config/devise.yml
 config/hydra-ldap.yml
 config/blacklight.yml
 config/secrets.yml
+config/setup_mail.rb
 config/browse_everything_providers.yml
 
 # Ignore this file for security reasons

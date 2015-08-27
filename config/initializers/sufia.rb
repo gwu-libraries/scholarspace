@@ -115,6 +115,13 @@ Sufia.config do |config|
   # Specify the path to the file characterization tool:
   config.fits_path = "/usr/local/bin/fits-0.8.6/fits.sh"
 
+  # These must be set in order for contact form emailing to work
+  # Specify the address to receive the Contact form emails
+  # config.contact_email = "send-site-feedback-to-me@email.gwu.edu"
+
+  # Address the Contact form emails will appear to be from.
+  # config.from_email = "researcher-self-deposit@gwu.edu"
+
   # Specify how many seconds back from the current time that we should show by default of the user's activity on the user's dashboard
   # config.activity_to_show_default_seconds_since_now = 24*60*60
 
