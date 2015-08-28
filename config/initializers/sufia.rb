@@ -11,7 +11,7 @@ Sufia.config do |config|
   config.max_notifications_for_dashboard = 5
 
   config.cc_licenses = {
-    'GW Open Access License' => 'http://library.gwu.edu/scholarspace/license',
+    'No Creative Commons rights have been assigned' => 'None',
     'Attribution 3.0 United States' => 'http://creativecommons.org/licenses/by/3.0/us/',
     'Attribution-ShareAlike 3.0 United States' => 'http://creativecommons.org/licenses/by-sa/3.0/us/',
     'Attribution-NonCommercial 3.0 United States' => 'http://creativecommons.org/licenses/by-nc/3.0/us/',
