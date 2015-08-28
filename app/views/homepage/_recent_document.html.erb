@@ -1,0 +1,31 @@
+<li class="featured-item">
+  <div class="main row">
+    <div class="col-sm-3">
+      <% if display_thumbs %>
+        <%= link_to sufia.generic_file_path(recent_document) do %>
+          <%= render_thumbnail_tag recent_document, { width: 90 } %>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="col-sm-9">
+      <h3>
+        <span class="sr-only">Title</span><%= link_to truncate(recent_document.title_or_label, length: 28, separator: ' '), sufia.generic_file_path(recent_document)  %>
+          <% if display_access %>
+            <% if recent_document.registered? %>
+              <span class="label label-info" title="<%=t('sufia.institution_name') %>"><%=t('sufia.institution_name') %></span>
+            <% elsif recent_document.public? %>
+              <span class="label label-success">Open Access</span>
+            <% else %>
+              <span class="label label-danger">Private</span>
+            <% end %>
+          <% end %>
+      </h3>
+      <div>
+        <p>Author: <%= link_to truncate(recent_document.creator, length: 25), sufia.generic_file_path(recent_document) %> </p>
+      </div>
+      <div>  
+        <p>Keywords: <span class="sr-only">Keywords</span><%= link_to_facet_list(recent_document.tags, 'tag', 'no keywords specified').html_safe %> </p>
+      </div>
+    </div>
+  </div>
+</li>

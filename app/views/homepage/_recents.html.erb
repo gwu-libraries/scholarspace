@@ -1,0 +1,16 @@
+<div>
+  <% if recent_documents.blank? %>
+    <% msg = 'Login to see your recently added documents' if msg.blank? and current_user.blank? %>
+    <% msg = 'You have no documents to display. Contribute some of your documents!' if msg.blank? %>
+    <h3><%= msg %></h3>
+  <% else %>
+    <h2>Recently Uploaded</h2>
+      <div class="panel-group dd" id="dd">
+        <ol id="featured_works">
+          <div id="recent_docs">
+            <%= render partial: "recent_document", collection: recent_documents, locals: {display_thumbs: display_thumbs, display_access: display_access} %>
+          </div>
+        </ol>
+      </div>
+  <% end %>
+</div>
