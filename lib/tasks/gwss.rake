@@ -10,17 +10,17 @@ namespace 'gwss' do
   desc "Populate (overwrite!) marketing and announcement content blocks from config files"
   task populate_content_blocks: :environment do
 
-    marketingblock = ContentBlock.find_by_name('marketing_text')
+    marketingblock = ContentBlock.find_or_create_by(name: 'marketing_text')
     f = File.open("#{Rails.root}/config/locales/content_blocks/marketing.html")
     marketingblock.value = f.read
     marketingblock.save
 
-    announcementblock = ContentBlock.find_by_name('announcement_text')
+    announcementblock = ContentBlock.find_or_create_by(name: 'announcement_text')
     f = File.open("#{Rails.root}/config/locales/content_blocks/announcement_text.html")
     announcementblock.value = f.read
     announcementblock.save
 
-    aboutblock = ContentBlock.find_by_name('about_page')
+    aboutblock = ContentBlock.find_or_create_by(name: 'about_page')
     f = File.open("#{Rails.root}/config/locales/content_blocks/about.html")
     aboutblock.value = f.read
     aboutblock.save
