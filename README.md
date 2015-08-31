@@ -150,7 +150,7 @@ Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
 * Install ubuntu 14.04 LTS package dependencies:
 
         % sudo apt-get update
-        % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2 tomcat7
+        % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2 tomcat7 libreoffice libcurl4-openssl-dev
 
 * Install Java 8 for 14.04
 
