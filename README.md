@@ -168,6 +168,10 @@ Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
         
         Add users to the rvm group
 
+* (Optional) Set up Shibboleth integartion
+
+  Please refer to https://github.com/gwu-libraries/shibboleth for the recommended steps for setting up the Shibboleth integration.
+
 * Install Rails
 
         % gem install rails -v 4.2.3 -N
