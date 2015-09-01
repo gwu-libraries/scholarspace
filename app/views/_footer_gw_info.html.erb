@@ -11,7 +11,13 @@
       <span> &#8226; </span>
       <span><a href="https://library.gwu.edu/contact">Contact Us</a></span>
       <span> &#8226; </span>
-      <span><a href="/users/sign_in">Staff Login</a></span></p>
+      <span>
+      <% if Rails.env.production? %>
+          <a href="/login">Staff Login</a>
+      <% else %>
+          <a href="/users/sign_in">Staff Login</a>
+      <% end %>
+      </span></p>
     </div>
 
   </div>
