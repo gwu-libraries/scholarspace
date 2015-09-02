@@ -310,7 +310,14 @@ Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
 * Run the database migrations
 
         % rake db:migrate RAILS_ENV=production
+        
+* Setup .jar files for full-text indexing
 
+        % rake sufia:jetty:config
+        % mv /opt/solr/contrib/extraction /opt/solr/contrib/extraction_bak
+        % cp -R jetty/solr/lib/contrib/extraction /opt/solr/contrib/
+        % sudo service tomcat7 restart
+        
 * Install fits.sh (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest download)
 
         % cd /usr/local/bin
