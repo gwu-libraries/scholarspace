@@ -42,10 +42,13 @@ en:
     metadata_help:
       generic_file:
         title: 'The name of the work.'
-        creator: 'The person or group responsible for creating the work. Personal names should be entered with the last name first, e.g. "Smith, John".'
+        creator: 'The person or group who created the work. Personal names should be entered with the last name first, e.g. "Smith, John".'
         description: 'Free-text notes about the work itself. Examples include abstract of a paper, summary of a dataset, or description of the work.'
         publisher: 'The entity responsible for publishing, printing, or manufacturing the final work. Examples could include the journal publisher of an article, the university that houses the center or institute such as The George Washington University, or the research project producing the work.'
         bibliographic_citation: "Includes citation and link back to original publication and any additional info required by the publisher."
         gw_affiliation: "Department, Center, Institute, Office, etc. with which this item is associated"
         language: "The language of the work."
-        identifier: "A unique handle related to the work. An example would be a DOI for a journal article, an ISBN or OCLC number for a book, or an ORCID for the author(s)."
+        keyword: "Words or phrases you select to describe what the work is about. These are used to search for content.  Use the Add button to enter additional terms."
+        date_created: "The year [YYYY] in which the work was generated, e.g. 2015."
+        related_url: "A link to a website or other specific content (audio, video, PDF document) related to the work. An example is the URL of a research
+project from which the work was derived."
