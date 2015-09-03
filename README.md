@@ -144,6 +144,7 @@ Set the SMTP credentials for the user as whom the app will send email.
 
 Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
 ------------
+Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be deployed on different servers if desired.  If doing so, ensure that firewall ports are opened between the necessary servers and the GW ScholarSpace application server.
 
 ### Dependencies
 
@@ -312,10 +313,22 @@ Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
         % rake db:migrate RAILS_ENV=production
         
 * Setup .jar files for full-text indexing
-
+ 
         % rake sufia:jetty:config
+
+* Move the .jar files to your Solr instance
+
+  If your Solr instance is on the same server as the GW ScholarSpace application do the following:
+        
         % mv /opt/solr/contrib/extraction /opt/solr/contrib/extraction_bak
         % cp -R jetty/solr/lib/contrib/extraction /opt/solr/contrib/
+        % sudo service tomcat7 restart
+
+  If your Solr instance is on a different server from the GW ScholarSpace application do the following:
+
+        Download the /opt/scholarspace/jetty/solr/lib/contrib/extraction folder via SFTP
+        % mv /opt/solr/contrib/extraction /opt/solr/contrib/extraction_bak
+        Upload the extraction folder to the server with your Solr instance into: /opt/solr/contrib/
         % sudo service tomcat7 restart
         
 * Install fits.sh (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest download)
