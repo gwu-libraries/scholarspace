@@ -1,16 +1,16 @@
 <h3>
   <span class="sr-only">Title</span>
-  <%= link_to truncate(featured.title_or_label, length: 28, separator: ' '), sufia.generic_file_path(featured)  %>
+  <%= link_to truncate(featured.title_or_label, length: 28, separator: ' '), sufia.generic_file_path(featured) %>
 </h3>
 <div> 
   <span class="sr-only">Author</span>
-  <p>Author: <%= link_to truncate(featured.creator, length: 25), sufia.generic_file_path(featured) %> </p>
+  <p><%= link_to_facet(featured.creator, Solrizer.solr_name("creator", :facetable)) %></p>
 </div>
 <div> 
-  <span class="sr-only">File type</span>
-  <p>File Type: <%= link_to_facet_list(featured.resource_type, 'resource_type', 'no resource specified') %> </p>
+  <span class="sr-only">Type of Work</span>
+  <p><%= link_to_facet_list(featured.resource_type, 'resource_type', 'no resource specified') %></p>
 </div>
 <div> 
   <span class="sr-only">Keywords</span>
-  <p>Keywords: <%= link_to_facet_list(featured.tags, 'tag', 'no keywords specified') %> </p>
+  <p><%= link_to_facet_list(featured.tags, 'tag', 'no keywords specified') %></p>
 </div>

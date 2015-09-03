@@ -21,10 +21,10 @@
           <% end %>
       </h3>
       <div>
-        <p>Author: <%= link_to truncate(recent_document.creator, length: 25), sufia.generic_file_path(recent_document) %> </p>
+        <p><span class="sr-only">Author</span><%= link_to_facet(recent_document.creator, Solrizer.solr_name("creator", :facetable)) %></p>
       </div>
       <div>  
-        <p>Keywords: <span class="sr-only">Keywords</span><%= link_to_facet_list(recent_document.tags, 'tag', 'no keywords specified').html_safe %> </p>
+        <p><span class="sr-only">Keywords</span><%= link_to_facet_list(recent_document.tags, 'tag', 'no keywords specified').html_safe %></p>
       </div>
     </div>
   </div>
