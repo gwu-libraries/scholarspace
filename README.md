@@ -327,7 +327,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
   If your Solr instance is on a different server from the GW ScholarSpace application do the following:
 
         Download the /opt/scholarspace/jetty/solr/lib/contrib/extraction folder via SFTP
-        % mv /opt/solr/contrib/extraction /opt/solr/contrib/extraction_bak
+        % rm -rf /opt/solr/contrib/extraction
         Upload the extraction folder to the server with your Solr instance into: /opt/solr/contrib/
         % sudo service tomcat7 restart
         
