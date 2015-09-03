@@ -38,7 +38,7 @@ en:
         resource_type: "Type of Work"
         creator: "Author"
         bibliographic_citation: "Previous Publication Information"
-        gw_affiliation: "GW Affiliation"
+        gw_affiliation: "GW Unit"
     metadata_help:
       generic_file:
         title: 'The name of the work.'

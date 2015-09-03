@@ -57,7 +57,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_facet_field solr_name("resource_type", :facetable), label: "Resource Type", limit: 5
     config.add_facet_field solr_name("creator", :facetable), label: "Author", limit: 5
-    config.add_facet_field solr_name("gw_affiliation", :facetable), label: "GW Affiliation", limit: 5
+    config.add_facet_field solr_name("gw_affiliation", :facetable), label: "GW Unit", limit: 5
     config.add_facet_field solr_name("tag", :facetable), label: "Keyword", limit: 5
     config.add_facet_field solr_name("subject", :facetable), label: "Subject", limit: 5
     config.add_facet_field solr_name("language", :facetable), label: "Language", limit: 5
@@ -77,7 +77,7 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("tag", :stored_searchable), label: "Keyword", itemprop: 'keywords'
     config.add_index_field solr_name("subject", :stored_searchable), label: "Subject", itemprop: 'about'
     config.add_index_field solr_name("creator", :stored_searchable), label: "Author", itemprop: 'creator'
-    config.add_index_field solr_name("gw_affiliation", :stored_searchable), label: "GW Affiliation", itemprop: 'gw_affiliation'
+    config.add_index_field solr_name("gw_affiliation", :stored_searchable), label: "GW Unit", itemprop: 'gw_affiliation'
     config.add_index_field solr_name("contributor", :stored_searchable), label: "Contributor", itemprop: 'contributor'
     config.add_index_field solr_name("publisher", :stored_searchable), label: "Publisher", itemprop: 'publisher'
     config.add_index_field solr_name("based_near", :stored_searchable), label: "Location", itemprop: 'contentLocation'
@@ -97,7 +97,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("tag", :stored_searchable), label: "Keyword"
     config.add_show_field solr_name("subject", :stored_searchable), label: "Subject"
     config.add_show_field solr_name("creator", :stored_searchable), label: "Author"
-    config.add_show_field solr_name("gw_affiliation", :stored_searchable), label: "GW Affiliation"
+    config.add_show_field solr_name("gw_affiliation", :stored_searchable), label: "GW Unit"
     config.add_show_field solr_name("contributor", :stored_searchable), label: "Contributor"
     config.add_show_field solr_name("publisher", :stored_searchable), label: "Publisher"
     config.add_show_field solr_name("based_near", :stored_searchable), label: "Location"
