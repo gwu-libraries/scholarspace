@@ -225,9 +225,13 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         % sudo cp -R /opt/solr/collection1 /opt/solr/development-core
         % sudo cp -R /opt/solr/collection1 /opt/solr/test-core
         
-  Replace the schema.xml and solrconfig.xml in /opt/solr/collection1/conf/ with the ones from the solr_conf folder in the repo.
-        
-  Replace the solr.xml file in /opt/solr with the one from the solr_conf folder in the repo
+  To configure Solr:
+  
+   - Replace the schema.xml and solrconfig.xml in /opt/solr/collection1/conf/ with the ones from the solr_conf folder in the repo.
+
+   - Replace the solr.xml file in /opt/solr with the one from the solr_conf folder in the repo.
+  
+  Now to deploy Solr to run in Tomcat.  From the /opt/install/solr-4.10.4 directory:
         
         % sudo cp dist/solr-4.10.4.war /var/lib/tomcat7/webapps/solr.war
         % sudo cp -R example/lib/ext/* /var/lib/tomcat7/webapps/solr/WEB-INF/lib
