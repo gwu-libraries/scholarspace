@@ -203,17 +203,15 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         % sudo chown $USER:scholarspace /opt/scholarspace
         % sudo chown www-data:www-data /opt/xsendfile
         
-   On the Solr/Fedora server (if deploying on a separate server - otherwise on the same server):
-   
-        % sudo chown tomcat7:tomcat7 /opt/solr
-        % sudo chown tomcat7:tomcat7 /opt/fedora
-        % sudo chown tomcat7:tomcat7 /var/log/solr
-        
-* Set up tomcat7 (on the Solr/Fedora server
+* Set up tomcat7 (on the Solr/Fedora server)
 
-  Replace the /etc/default/tomcat7 file with the tomcat7 file from the /tomcat_conf folder in this repo.  This will set solr Home, fcrepo home, and java path.
+  Replace the /etc/default/tomcat7 file with the tomcat7 file from the /tomcat_conf folder in this repo.  This will set solr home, fcrepo home, and java path.
+
+  Set the owner of the /opt/fedora directory:
         
-* Set up Solr
+        % sudo chown tomcat7:tomcat7 /opt/fedora
+
+* Set up Solr (on the Solr server)
 
         % cd /opt/install
         % wget http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz
@@ -224,9 +222,15 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         % sudo cp -R contrib /opt/solr
         % sudo cp -R /opt/solr/collection1 /opt/solr/development-core
         % sudo cp -R /opt/solr/collection1 /opt/solr/test-core
+        % sudo chown tomcat7:tomcat7 /opt/solr
+        % sudo chown tomcat7:tomcat7 /var/log/solr
         
   To configure Solr:
   
+   - Edit /opt/solr/development-core/core.properties to set `name=development-core`
+
+   - Edit /opt/solr/test-core/core.properties to set `name=test-core`
+
    - Replace the schema.xml and solrconfig.xml in /opt/solr/collection1/conf/ with the ones from the solr_conf folder in the repo.
 
    - Replace the solr.xml file in /opt/solr with the one from the solr_conf folder in the repo.
@@ -249,7 +253,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         % wget http://central.maven.org/maven2/org/fcrepo/fcrepo-message-consumer-webapp/4.3.0/fcrepo-message-consumer-webapp-4.3.0.war
         % sudo cp fcrepo-message-consumer-webapp-4.3.0.war /var/lib/tomcat7/webapps/fcrepo-message-consumer.war
         
-  Replace or create the indexer-core.xml file in /var/lib/tomcat7/webapps/fcrepo-message-consumer/WEB-INF/classes/spring/indexer-core.xml with the one from the tomcat_conf/fcrepo-message-consumer folder in the repo
+  Replace or create the indexer-core.xml file in /var/lib/tomcat7/webapps/fcrepo-message-consumer/WEB-INF/classes/spring/indexer-core.xml with the one from the tomcat_conf/fcrepo-message-consumer folder in the repo.  Edit indexer-core.xml and set the `fedoraUsername` and the `fedoraPassword` values.
         
 * Set up fcrepo
 
@@ -257,15 +261,19 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         % wget https://repo1.maven.org/maven2/org/fcrepo/fcrepo-webapp/4.3.0/fcrepo-webapp-4.3.0.war
         % cp fcrepo-webapp-4.3.0.war /var/lib/tomcat7/webapps/fcrepo-webapp-4.3.0.war
 
-  Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo-webapp-4.2.0/WEB-INF/web.xml with the one from the tomcat_conf/fcrepo-webapp folder in the repo
+  Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo-webapp-4.3.0/WEB-INF/web.xml with the one from the tomcat_conf/fcrepo-webapp folder in the repo
+
+* Ensure tomcat7 library files are (still) all owned by tomcat7
+
+        % sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7
 
 * Set up authentication to fcrepo
 
         % cd /etc/tomcat7
         
-  Replace tomcat_users.xml with the tomcat_users.xml file from tomcat_conf folder in the repo.
+  Replace tomcat-users.xml with the tomcat-users.xml file from tomcat_conf folder in the repo.
   
-  Edit tomcat_users.xml and replace the "dummypasswords" with your secure passwords.
+  Edit tomcat-users.xml and replace the "dummypasswords" with your secure passwords.
 
 * Restart Tomcat7 Server
 
