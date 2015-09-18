@@ -222,7 +222,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         % sudo cp -R contrib /opt/solr
         % sudo cp -R /opt/solr/collection1 /opt/solr/development-core
         % sudo cp -R /opt/solr/collection1 /opt/solr/test-core
-        % sudo chown tomcat7:tomcat7 /opt/solr
+        % sudo chown -R tomcat7:tomcat7 /opt/solr
         % sudo chown tomcat7:tomcat7 /var/log/solr
         
   To configure Solr:
