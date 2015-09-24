@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  # Connects this user object to Hydra behaviors.
-  include Hydra::User# Connects this user object to Sufia behaviors. 
- include Sufia::User
+  # Connects this user object to Role-management behaviors. 
+  include Hydra::RoleManagement::UserRoles
+  # Connects this user object to Sufia behaviors. 
+  include Sufia::User
   include Sufia::UserUsageStats
 
 
@@ -10,7 +11,7 @@ class User < ActiveRecord::Base
 
     attr_accessible :email, :password, :password_confirmation
   end
-# Connects this user object to Blacklights Bookmarks. 
+  # Connects this user object to Blacklights Bookmarks. 
   include Blacklight::User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -36,6 +37,10 @@ class User < ActiveRecord::Base
 		 :groups_last_update => DateTime.current,
 		 :shibboleth_id => auth[:extra][:raw_info][:"Shib-Session-ID"])
     user
+  end
+
+  def contentadmin?
+    roles.where(name: 'content-admin').exists?
   end
 
 end

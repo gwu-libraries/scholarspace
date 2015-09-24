@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         :omniauth_callbacks => 'users/omniauth_callbacks',
       }, :skip => [ :sessions ]
     }
+    mount Hydra::RoleManagement::Engine => '/'
 
     devise_scope :users do
       get 'logout' => 'sessions#destroy', as: :destroy_user_session
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
     end
   else
     devise_for :users
+    mount Hydra::RoleManagement::Engine => '/'
   end
 
   Hydra::BatchEdit.add_routes(self)
