@@ -31,4 +31,13 @@ namespace 'gwss' do
     #      would need to be addressed.
   end
 
+  desc "Create GW ScholarSpace user roles"
+  task create_roles: :environment do
+    adminrole = Role.find_or_create_by(name: 'admin')
+    adminrole.save
+
+    contentadminrole = Role.find_or_create_by(name: 'content-admin')
+    contentadminrole.save
+  end
+
 end

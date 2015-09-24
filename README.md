@@ -132,6 +132,20 @@ Set the SMTP credentials for the user as whom the app will send email.
         % script/restart_resque.sh development
    (or ```script/restart_resque.sh production``` as the case may be)
 
+### Create the user roles
+
+  Run the rake task that creates user roles called `admin` and `content-admin`:
+
+        % rake gwss:create_roles
+
+  At the rails console, add an initial user to the `admin` role.  Make sure that your admin user
+has logged in at least once.
+
+        % rails c
+        > r = Role.find_by_name('admin')
+        > r.users << User.find_by_user_key('YOUR_ADMIN_USER_EMAIL@gwu.edu')
+        > r.save 
+
 ### (Optional) Populate the initial content blocks
 
   Run the rake task that takes the content of the HTML files in config/locales/content_blocks and populates the associated content blocks.  Note that for an existing instance, running this rake task will overwrite any chnages you've made to the content blocks!
@@ -392,6 +406,20 @@ Set the SMTP credentials for the user as whom the app will send email.
 ### Start a Redis RESQUE pool
 
         % script/restart_resque.sh production
+
+### Create the user roles
+
+  Run the rake task that creates user roles called `admin` and `content-admin`:
+
+        % rake gwss:create_roles
+
+  At the rails console, add an initial user to the `admin` role.  Make sure that your admin user
+has logged in at least once.
+
+        % rails c
+        > r = Role.find_by_name('admin')
+        > r.users << User.find_by_user_key('YOUR_ADMIN_USER_EMAIL@gwu.edu')
+        > r.save 
 
 ### (Optional) Populate the initial content blocks
 
