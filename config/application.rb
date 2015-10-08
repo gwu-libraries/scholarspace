@@ -294,6 +294,7 @@ module Scholarspace
       "Statistics" => "Statistics",
       "Strategic Management & Public Policy" => "Strategic Management & Public Policy",
       "Strategic Public Relations" => "Strategic Public Relations",
+      "Student Organization" => "Student Organization",
       "Surgery" => "Surgery",
       "Sustainable Urban Planning" => "Sustainable Urban Planning",
       "Taiwan Education and Research Program" => "Taiwan Education and Research Program",
