@@ -1,0 +1,3 @@
+<% record.gw_affiliation.each do |gwaff| %>
+  <%= link_to_facet(gwaff, Solrizer.solr_name("gw_affiliation", :facetable)) %><br />
+<% end %>
