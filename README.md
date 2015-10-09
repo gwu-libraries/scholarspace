@@ -288,7 +288,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 * Install gems
 
         % cd scholarspace
-        % bundle install
+        % bundle install --without development
 
 * Create a postgresql user
 
