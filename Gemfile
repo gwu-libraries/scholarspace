@@ -57,3 +57,4 @@ group :development, :test do
 end
 
 gem 'hydra-role-management'
+gem 'hydra-collections', '~> 5.0.3'
