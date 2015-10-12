@@ -146,6 +146,8 @@ has logged in at least once.
         > r.users << User.find_by_user_key('YOUR_ADMIN_USER_EMAIL@gwu.edu')
         > r.save 
 
+  We will [add the content-admin users](#dev-add-content-admin) shortly through the /roles UI.
+
 ### (Optional) Populate the initial content blocks
 
   Run the rake task that takes the content of the HTML files in config/locales/content_blocks and populates the associated content blocks.  Note that for an existing instance, running this rake task will overwrite any chnages you've made to the content blocks!
@@ -155,6 +157,19 @@ has logged in at least once.
 ### Run the application
 
         % rails s -p <PORT NUMBER> -b 0.0.0.0
+
+### (Optional) Add content-admin users <a id="dev-add-content-admin"></a>
+
+* Ask each of the content-admin users to log in to the application at least once.  Right now they will have read-only rights.
+
+* Log in as an admin user, and navigate to /roles
+
+* Select the content-admin role, and add each of the users to whom you wish to grant content-admin rights.  These users should now be able
+to upload items and edit the items that they have uploaded (plus items transferred or proxied to them).
+
+* Note that removing users from roles through the /roles interface is currently broken, and must be accomplished through the rails console.
+
+
 
 Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
 ------------
@@ -421,6 +436,8 @@ has logged in at least once.
         > r.users << User.find_by_user_key('YOUR_ADMIN_USER_EMAIL@gwu.edu')
         > r.save 
 
+  We will [add the content-admin users](#prod-add-content-admin) later through the /roles UI.
+
 ### (Optional) Populate the initial content blocks
 
   Run the rake task that takes the content of the HTML files in config/locales/content_blocks and populates the associated content blocks.  Note that for an existing instance, running this rake task will overwrite any chnages you've made to the content blocks!
@@ -465,3 +482,14 @@ has logged in at least once.
         % cd /opt/scholarspace
         % rake assets:precompile RAILS_ENV=production 
         % sudo service apache2 restart
+
+### (Optional) Add content-admin users <a id="prod-add-content-admin"></a>
+
+* Ask each of the content-admin users to log in to the application at least once.  Right now they will have read-only rights.
+
+* Log in as an admin user, and navigate to /roles
+
+* Select the content-admin role, and add each of the users to whom you wish to grant content-admin rights.  These users should now be able
+to upload items and edit the items that they have uploaded (plus items transferred or proxied to them).
+
+* Note that removing users from roles through the /roles interface is currently broken, and must be accomplished through the rails console.
