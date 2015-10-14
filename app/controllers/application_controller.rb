@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
+  #before_filter do
+  #  resource = controller_path.singularize.gsub('/', '_').to_sym 
+  #  method = "#{resource}_params"
+  #  params[resource] &&= send(method) if respond_to?(method, true)
+  #end
   helper Openseadragon::OpenseadragonHelper
   # Adds a few additional behaviors into the application controller 
   include Blacklight::Controller  
-# Adds Sufia behaviors into the application controller 
+  # Adds Sufia behaviors into the application controller 
   include Sufia::Controller
 
   include Hydra::Controller::ControllerBehavior

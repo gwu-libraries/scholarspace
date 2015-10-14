@@ -1,6 +1,6 @@
 development:
-  archivist:
-    - archivist1@example.com
+# note: at least one role must be present, even if empty
+  admin:
 test:
   archivist:
     - archivist1@example.com
@@ -17,3 +17,6 @@ test:
   patron:
     - patron1@example.com
     - leland_himself@example.com
+production:
+# note: at least one role must be present, even if empty
+  admin:

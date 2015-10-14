@@ -132,6 +132,22 @@ Set the SMTP credentials for the user as whom the app will send email.
         % script/restart_resque.sh development
    (or ```script/restart_resque.sh production``` as the case may be)
 
+### Create the user roles
+
+  Run the rake task that creates user roles called `admin` and `content-admin`:
+
+        % rake gwss:create_roles
+
+  At the rails console, add an initial user to the `admin` role.  Make sure that your admin user
+has logged in at least once.
+
+        % rails c
+        > r = Role.find_by_name('admin')
+        > r.users << User.find_by_user_key('YOUR_ADMIN_USER_EMAIL@gwu.edu')
+        > r.save 
+
+  We will [add the content-admin users](#dev-add-content-admin) shortly through the /roles UI.
+
 ### (Optional) Populate the initial content blocks
 
   Run the rake task that takes the content of the HTML files in config/locales/content_blocks and populates the associated content blocks.  Note that for an existing instance, running this rake task will overwrite any chnages you've made to the content blocks!
@@ -141,6 +157,19 @@ Set the SMTP credentials for the user as whom the app will send email.
 ### Run the application
 
         % rails s -p <PORT NUMBER> -b 0.0.0.0
+
+### (Optional) Add content-admin users <a id="dev-add-content-admin"></a>
+
+* Ask each of the content-admin users to log in to the application at least once.  Right now they will have read-only rights.
+
+* Log in as an admin user, and navigate to /roles
+
+* Select the content-admin role, and add each of the users to whom you wish to grant content-admin rights.  These users should now be able
+to upload items and edit the items that they have uploaded (plus items transferred or proxied to them).
+
+* Note that removing users from roles through the /roles interface is currently broken, and must be accomplished through the rails console.
+
+
 
 Installation with Apache, Tomcat 7, and Passenger <a id="prod-install"></a>
 ------------
@@ -393,6 +422,22 @@ Set the SMTP credentials for the user as whom the app will send email.
 
         % script/restart_resque.sh production
 
+### Create the user roles
+
+  Run the rake task that creates user roles called `admin` and `content-admin`:
+
+        % rake gwss:create_roles
+
+  At the rails console, add an initial user to the `admin` role.  Make sure that your admin user
+has logged in at least once.
+
+        % rails c
+        > r = Role.find_by_name('admin')
+        > r.users << User.find_by_user_key('YOUR_ADMIN_USER_EMAIL@gwu.edu')
+        > r.save 
+
+  We will [add the content-admin users](#prod-add-content-admin) later through the /roles UI.
+
 ### (Optional) Populate the initial content blocks
 
   Run the rake task that takes the content of the HTML files in config/locales/content_blocks and populates the associated content blocks.  Note that for an existing instance, running this rake task will overwrite any chnages you've made to the content blocks!
@@ -437,3 +482,14 @@ Set the SMTP credentials for the user as whom the app will send email.
         % cd /opt/scholarspace
         % rake assets:precompile RAILS_ENV=production 
         % sudo service apache2 restart
+
+### (Optional) Add content-admin users <a id="prod-add-content-admin"></a>
+
+* Ask each of the content-admin users to log in to the application at least once.  Right now they will have read-only rights.
+
+* Log in as an admin user, and navigate to /roles
+
+* Select the content-admin role, and add each of the users to whom you wish to grant content-admin rights.  These users should now be able
+to upload items and edit the items that they have uploaded (plus items transferred or proxied to them).
+
+* Note that removing users from roles through the /roles interface is currently broken, and must be accomplished through the rails console.
