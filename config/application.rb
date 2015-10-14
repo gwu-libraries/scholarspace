@@ -7,6 +7,8 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module Scholarspace
+  VERSION = "v1.1.0"
+
   class Application < Rails::Application
     
     config.generators do |g|
