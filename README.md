@@ -426,7 +426,7 @@ Set the SMTP credentials for the user as whom the app will send email.
 
   Run the rake task that creates user roles called `admin` and `content-admin`:
 
-        % rake gwss:create_roles
+        % rake gwss:create_roles RAILS_ENV=production
 
   At the rails console, add an initial user to the `admin` role.  Make sure that your admin user
 has logged in at least once.
@@ -493,3 +493,26 @@ has logged in at least once.
 to upload items and edit the items that they have uploaded (plus items transferred or proxied to them).
 
 * Note that removing users from roles through the /roles interface is currently broken, and must be accomplished through the rails console.
+
+### (Optional) Add Google Analytics
+
+* Enable Google Analytics in config/initializers/sufia.rb by editing the following lines:
+
+         # Enable displaying usage statistics in the UI
+         # Defaults to FALSE
+         # Requires a Google Analytics id and OAuth2 keyfile.  See README for more info
+         config.analytics = true
+        
+         # Specify a Google Analytics tracking ID to gather usage statistics
+         config.google_analytics_id = 'UA-99999999-1'
+
+         # Specify a date you wish to start collecting Google Analytic statistics for.
+         config.analytic_start_date = DateTime.new(2014,9,10)
+
+* Copy the analytics.yml.template file in config
+
+        % cp config/analytics.yml.template config/analytics.yml
+
+* Populate the anaylitcs.yml file with your Google Anaylitcs credentials.  See: https://github.com/projecthydra/sufia#analytics-and-usage-statistics for setup details.
+
+
