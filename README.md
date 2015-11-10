@@ -513,6 +513,6 @@ to upload items and edit the items that they have uploaded (plus items transferr
 
         % cp config/analytics.yml.template config/analytics.yml
 
-* Populate the anaylitcs.yml file with your Google Anaylitcs credentials.  See: https://github.com/projecthydra/sufia#analytics-and-usage-statistics for setup details.
+* Populate the anaylitcs.yml file with your Google Anaylitcs credentials.  See: https://github.com/projecthydra/sufia#analytics-and-usage-statistics for setup details.  Note that sufia seems to expect the .p12 file version of the private key, rather than the json version.
 
 
