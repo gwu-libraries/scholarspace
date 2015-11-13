@@ -21,8 +21,8 @@ Rails.application.routes.draw do
 
   Hydra::BatchEdit.add_routes(self)
   # This must be the very last route in the file because it has a catch-all route for 404 errors.
-    # This behavior seems to show up only in production mode.
-    mount Sufia::Engine => '/'
+  # This behavior seems to show up only in production mode.
+  mount Sufia::Engine => '/'
   root to: 'homepage#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -34,7 +34,7 @@ Installation for Development
 
 * Install Rails
 
-        % gem install rails -v 4.2.3 -N
+        % gem install rails -v 4.2.5 -N
 
 ### Install
 
