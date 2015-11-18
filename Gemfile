@@ -40,7 +40,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'sufia', '6.3.0'
+gem 'sufia', '6.4.0'
 
 # Use Omniauth-Shibboleth for authentication federation
 gem 'omniauth-shibboleth'
