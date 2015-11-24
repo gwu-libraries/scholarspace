@@ -34,4 +34,4 @@ banner "killing resque-pool"
     kill -2 $PID && anywait $PID
 }
 banner "starting resque-pool"
-bundle exec resque-pool --daemon --environment $ENVIRONMENT start
+RUN_AT_EXIT_HOOKS=true TERM_CHILD=1 bundle exec resque-pool --daemon --environment $ENVIRONMENT start
