@@ -515,4 +515,7 @@ to upload items and edit the items that they have uploaded (plus items transferr
 
 * Populate the anaylitcs.yml file with your Google Anaylitcs credentials.  See: https://github.com/projecthydra/sufia#analytics-and-usage-statistics for setup details.  Note that sufia seems to expect the .p12 file version of the private key, rather than the json version.
 
+* Setup a cron-job to import GA stats nightly
 
+        % crontab -e
+        % 0 5 * * * /opt/scholarspace/script/import_stats.sh
