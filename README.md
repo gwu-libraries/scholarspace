@@ -129,8 +129,15 @@ Set the SMTP credentials for the user as whom the app will send email.
 ### Start a Redis RESQUE pool
 
         % cd scholarspace
-        % script/restart_resque.sh development
-   (or ```script/restart_resque.sh production``` as the case may be)
+
+    Assign execute permissions to the script if it doesn't already have them:
+
+        % sudo chmod +x script/restart_resque.sh
+
+    Run the script:
+
+        % script/restart_resque.sh production
+   (or ```script/restart_resque.sh development``` if working in development mode)
 
 ### Create the user roles
 
@@ -507,12 +514,28 @@ to upload items and edit the items that they have uploaded (plus items transferr
          config.google_analytics_id = 'UA-99999999-1'
 
          # Specify a date you wish to start collecting Google Analytic statistics for.
-         config.analytic_start_date = DateTime.new(2014,9,10)
+         config.analytic_start_date = DateTime.new(2015,11,10)
 
 * Copy the analytics.yml.template file in config
 
         % cp config/analytics.yml.template config/analytics.yml
 
-* Populate the anaylitcs.yml file with your Google Anaylitcs credentials.  See: https://github.com/projecthydra/sufia#analytics-and-usage-statistics for setup details.  Note that sufia seems to expect the .p12 file version of the private key, rather than the json version.
+* Populate the analyitcs.yml file with your Google Analyitcs credentials.  See: https://github.com/projecthydra/sufia#analytics-and-usage-statistics for setup details.  Note that sufia seems to expect the .p12 file version of the private key, rather than the json version.
 
+* Set up a cron job to import GA stats nightly
 
+  Test the script to make sure that it can run successfully.  Make sure the script has execute permissions.  Your analytics.yml file must also be set up correctly in order for the script to succeed.
+
+        % cd /opt/scholarspace/script
+
+        % sudo chmod +x import_stats.sh
+
+        % ./import_stats.sh production
+
+  If it runs successfully, proceed with adding the cron job:
+
+        % crontab -e
+
+  Add a line similar to the following:
+
+        0 5 * * * /opt/scholarspace/script/import_stats.sh production
