@@ -108,12 +108,12 @@ Installation for Development
         % rake sufia:jetty:config
         % rake jetty:start
 
-* Install fits.sh (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest download)
+* Install fits.sh version 0.6.2 (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest 0.6.2 download)
 
         % cd /usr/local/bin
-        % sudo curl http://projects.iq.harvard.edu/files/fits/files/fits-0.8.6_1.zip -o fits.zip
-        % sudo unzip fits.zip
-        % cd fits-0.8.6
+        % sudo curl http://projects.iq.harvard.edu/files/fits/files/fits-0.6.2.zip -o fits-0.6.2.zip
+        % sudo unzip fits-0.6.2.zip
+        % cd fits-0.6.2
         % sudo chmod a+x fits*.sh
 
 ### Configure Contact form emailing
@@ -137,7 +137,7 @@ Set the SMTP credentials for the user as whom the app will send email.
     Run the script:
 
         % script/restart_resque.sh production
-   (or ```script/restart_resque.sh development``` if working in development mode)
+   (or ``script/restart_resque.sh development`` if working in development mode)
 
 ### Create the user roles
 
@@ -390,7 +390,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 
 * Move the extraction .jar files from hydra-jetty to your Solr instance (needed for full text indexing)
 
-  If your Solr instance is on the same server as the GW ScholarSpace application, replace the ```/opt/solr/contrib/extraction``` folder with a copy of ```/opt/scholarspace/jetty/solr/lib/contrib/extraction```:
+  If your Solr instance is on the same server as the GW ScholarSpace application, replace the ``/opt/solr/contrib/extraction`` folder with a copy of ``/opt/scholarspace/jetty/solr/lib/contrib/extraction``:
         
         % rm -rf /opt/solr/contrib/extraction
         % cp -R jetty/solr/lib/contrib/extraction /opt/solr/contrib/
@@ -407,12 +407,12 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         
         % sudo service tomcat7 restart
         
-* Install fits.sh (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest download)
+* Install fits.sh version 0.6.2 (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest 0.6.2 download)
 
         % cd /usr/local/bin
-        % sudo curl http://projects.iq.harvard.edu/files/fits/files/fits-0.8.6_1.zip -o fits.zip
-        % sudo unzip fits.zip
-        % cd fits-0.8.6
+        % sudo curl http://projects.iq.harvard.edu/files/fits/files/fits-0.6.2.zip -o fits-0.6.2.zip
+        % sudo unzip fits-0.6.2.zip
+        % cd fits-0.6.2
         % sudo chmod a+x fits*.sh
 
 ### Configure Contact form emailing
