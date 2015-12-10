@@ -135,7 +135,7 @@ Sufia.config do |config|
   config.redis_namespace = "sufia"
 
   # Specify the path to the file characterization tool:
-  config.fits_path = "/usr/local/bin/fits-0.8.6/fits.sh"
+  config.fits_path = "/usr/local/bin/fits-0.6.2/fits.sh"
 
   # These must be set in order for contact form emailing to work
   # Specify the address to receive the Contact form emails
