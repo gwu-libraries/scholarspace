@@ -40,7 +40,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'sufia', '6.4.0'
+gem 'sufia', '6.6.0'
 
 # Use Omniauth-Shibboleth for authentication federation
 gem 'omniauth-shibboleth'
@@ -57,3 +57,6 @@ group :development, :test do
 end
 
 gem 'hydra-role-management'
+
+# See https://github.com/projecthydra/sufia/commit/6a2f8ae03b93b14389971df7907b88d7d3044043#diff-bdf3765bf1682c8aba719dba2e632b54R33 for reason for constraining the active-fedora version below 9.8.  Remove this for Sufia 7.
+gem 'active-fedora', '~> 9.4', '< 9.8'

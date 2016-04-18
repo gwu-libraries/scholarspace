@@ -1,8 +1,0 @@
-<% record.rights.each do |r| %>
-  <%=link_to_field('rights',r, Sufia.config.cc_licenses_reverse[r])%>
-  <% if r.start_with?("http") %>
-    <%= iconify_auto_link(r,false) %>
-  <% else %>
-    <br />
-  <% end %>
-<% end %>
