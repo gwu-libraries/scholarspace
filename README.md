@@ -294,10 +294,10 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 * Set up fcrepo
 
         % cd /opt/install
-        % wget https://repo1.maven.org/maven2/org/fcrepo/fcrepo-webapp/4.4.0/fcrepo-webapp-4.4.0.war
-        % cp fcrepo-webapp-4.4.0.war /var/lib/tomcat7/webapps/fcrepo-webapp-4.4.0.war
+        % wget https://repo1.maven.org/maven2/org/fcrepo/fcrepo-webapp/4.5.0/fcrepo-webapp-4.5.0.war
+        % cp fcrepo-webapp-4.5.0.war /var/lib/tomcat7/webapps/fcrepo-webapp-4.5.0.war
 
-  Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo-webapp-4.4.0/WEB-INF/web.xml with the one from the tomcat_conf/fcrepo-webapp folder in the repo
+  Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo-webapp-4.5.0/WEB-INF/web.xml with the one from the tomcat_conf/fcrepo-webapp folder in the repo
 
 * Ensure tomcat7 library files are (still) all owned by tomcat7
 
