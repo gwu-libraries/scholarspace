@@ -116,6 +116,10 @@ Installation for Development
         % cd fits-0.6.2
         % sudo chmod a+x fits*.sh
 
+### Configure ImageMagick policies
+
+* Copy imagemagick_conf/policy.xml to /etc/ImageMagick (overwrite the default policy.xml)
+
 ### Configure Contact form emailing
 
   In order to enable the contact form page to send email when the user clicks Send,
@@ -414,6 +418,10 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         % sudo unzip fits-0.6.2.zip
         % cd fits-0.6.2
         % sudo chmod a+x fits*.sh
+
+### Configure ImageMagick policies
+
+* Copy imagemagick_conf/policy.xml to /etc/ImageMagick (overwrite the default policy.xml)
 
 ### Configure Contact form emailing
 
