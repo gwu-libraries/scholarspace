@@ -287,14 +287,6 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
    
         /var/log/solr/solr.log { copytruncate daily rotate 5 compress missingok create 640 tomcat7 tomcat7 }
         
-* Set up fcrepo-message-consumer
-
-        % cd /opt/install
-        % wget http://central.maven.org/maven2/org/fcrepo/fcrepo-message-consumer-webapp/4.3.0/fcrepo-message-consumer-webapp-4.3.0.war
-        % sudo cp fcrepo-message-consumer-webapp-4.3.0.war /var/lib/tomcat7/webapps/fcrepo-message-consumer.war
-        
-  Replace or create the indexer-core.xml file in /var/lib/tomcat7/webapps/fcrepo-message-consumer/WEB-INF/classes/spring/indexer-core.xml with the one from the tomcat_conf/fcrepo-message-consumer folder in the repo.  Edit indexer-core.xml and set the `fedoraUsername` and the `fedoraPassword` values.
-        
 * Set up fcrepo
 
         % cd /opt/install
