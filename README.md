@@ -15,7 +15,7 @@ Installation for Development
 * Install ubuntu package dependencies:
 
         % sudo apt-get update
-        % sudo apt-get install git postgresql libpq-dev redis-server unzip openjdk-7-jre clamav-daemon curl imagemagick libapache2-mod-shib2
+        % sudo apt-get install git postgresql libpq-dev redis-server unzip openjdk-7-jre clamav-daemon curl imagemagick libapache2-mod-shib2 libapr1 libapr1-dev
 
 * Install RVM (for installation via SSL and other RVM installation information, refer to https://rvm.io/rvm/install)
 
@@ -547,3 +547,37 @@ to upload items and edit the items that they have uploaded (plus items transferr
   Add a line similar to the following:
 
         0 5 * * * /opt/scholarspace/script/import_stats.sh production
+        
+### (Optional) Add SSL to Fedora and Solr Connections
+These instructions are for redirecting port 8080 traffic on Tomcat to port 8443 and running SSL using the Apache Portable Runtime (APR).
+
+ * Install Tomcat dependencies
+       
+        % sudo apt-get install libapr1 libapr1-dev
+
+*  Generate your SSL certificates and key using the instructions provided here: https://github.com/gwu-libraries/ssl_howto
+
+*  Copy the server_ssl.xml example from this repo to /etc/tomcat
+        
+        % sudo cp server_ssl.xml /etc/tomcat/server.xml
+
+*  Edit /etc/tomcat/server.xml and replace the dummy values for the following lines with your certificates and keys:
+	```
+        SSLCertificateFile="/etc/ssl/certs/yourservername.cer"
+        SSLCertificateChainFile="/etc/ssl/certs/yourservername.cer"
+        SSLCertificateKeyFile="/etc/ssl/private/yourservername.pem"
+	```
+*  Create a symbolic link to libtcnative1.so to address a Ubuntu/Tomcat bug
+        
+        % sudo ln -sv /usr/lib/x86_64-linux-gnu/libtcnative-1.so /usr/lib/
+
+*  Replace the web.xml files for Solr and Fedora with the web_ssl.xml files from the repo:
+
+	```
+	% cp tomcat_conf/fcrepo/web_ssl.xml /var/lib/tomcat7/webapps/fcrepo/WEB-INF/web.xml
+	% cp tomcat_conf/solr/web_ssl.xml /var/lib/tomcat7/webapps/solr/WEB-INF/web.xml
+	```
+
+*  Restart Tomcat and test access over HTTPS
+
+        % sudo service tomcat7 restart

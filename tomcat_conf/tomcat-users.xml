@@ -24,8 +24,9 @@
   and thus are ignored when reading this file. Do not forget to remove
   <!.. ..> that surrounds them.
 -->
-  <role rolename="fedoraUser"/>
+  <role rolename="solrAdmin"/>
   <role rolename="fedoraAdmin"/>
-  <user username="scholarspace" password="dummypassword" roles="fedoraUser"/>
+  <user username="scholarspace" password="dummypassword" roles="fedoraAdmin"/>
   <user username="fedoraAdmin" password="dummypassword" roles="fedoraAdmin"/>
+  <user username="solrAdmin" password="dummypassword" roles="solrAdmin"
 </tomcat-users>
