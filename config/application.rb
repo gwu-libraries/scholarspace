@@ -164,6 +164,7 @@ module Scholarspace
       "History" => "History",
       "Homeland Security Policy Institute" => "Homeland Security Policy Institute",
       "Human Hookworm Vaccine Initiative / Sabin Vaccine Institute PDP " => "Human Hookworm Vaccine Initiative / Sabin Vaccine Institute PDP ",
+      "Human and Organizational Learning" => "Human and Organizational Learning",
       "Human Services & Social Justice" => "Human Services & Social Justice",
       "Information Systems & Technology Management" => "Information Systems & Technology Management",
       "Information, Technology and Globalization Program" => "Information, Technology and Globalization Program",
