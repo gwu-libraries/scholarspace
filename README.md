@@ -295,13 +295,13 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         
   Replace or create the indexer-core.xml file in /var/lib/tomcat7/webapps/fcrepo-message-consumer/WEB-INF/classes/spring/indexer-core.xml with the one from the tomcat_conf/fcrepo-message-consumer folder in the repo.  Edit indexer-core.xml and set the `fedoraUsername` and the `fedoraPassword` values.
         
-* Set up fcrepo
+* Set up fcrepo with audit support
 
         % cd /opt/install
-        % wget https://repo1.maven.org/maven2/org/fcrepo/fcrepo-webapp/4.5.0/fcrepo-webapp-4.5.0.war
-        % cp fcrepo-webapp-4.5.0.war /var/lib/tomcat7/webapps/fcrepo-webapp-4.5.0.war
+        % wget https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-4.5.1/fcrepo-webapp-plus-audit-4.5.1.war
+        % cp fcrepo-webapp-plus-audit-4.5.1.war /var/lib/tomcat7/webapps/fcrepo.war
 
-  Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo-webapp-4.5.0/WEB-INF/web.xml with the one from the tomcat_conf/fcrepo-webapp folder in the repo
+  Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo/WEB-INF/web.xml with the one from the tomcat_conf/fcrepo-webapp folder in the repo
 
 * Ensure tomcat7 library files are (still) all owned by tomcat7
 
