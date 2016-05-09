@@ -328,7 +328,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 * Install gems
 
         % cd scholarspace
-        % bundle install --without development
+        % bundle install --without development --deployment
 
 * Create a postgresql user
 
@@ -463,7 +463,7 @@ has logged in at least once.
 
 * Set up Passenger
 
-        % gem install passenger
+        % gem install passenger -v 5.0.19
         % passenger-install-apache2-module
         Select Ruby from the list of languages
         
