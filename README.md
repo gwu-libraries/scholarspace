@@ -38,7 +38,7 @@ Installation for Development
 
 ### Install
 
-* Get the gw-sufia code:
+* Get the GW ScholarSpace code:
 
         % git clone https://github.com/gwu-libraries/scholarspace.git
 
@@ -193,7 +193,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         % sudo apt-get update
         % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2 tomcat7 libreoffice libcurl4-openssl-dev
 
-* Install Java 8 for 14.04
+* Install Java 8 for 14.04 (on the Solr/Fedora server):
 
         % sudo apt-add-repository ppa:webupd8team/java
         % sudo apt-get update
@@ -202,6 +202,8 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
        
 * Install RVM for multi-users (for installation via SSL and other RVM installation information, refer to https://rvm.io/rvm/install) Installs RVM to /usr/local/rvm
 
+   On the GW ScholarSpace server:
+
         % curl -L https://get.rvm.io | sudo bash -s stable
         % source ~/.rvm/scripts/rvm
         % rvm install ruby-2.2.1
@@ -209,13 +211,13 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         
         Add users to the rvm group
 
-* (Optional) Set up Shibboleth integartion
+* (Optional) Set up Shibboleth integration on the GW ScholarSpace server:
 
   Please refer to https://github.com/gwu-libraries/shibboleth for the recommended steps for setting up the Shibboleth integration.
 
-* Install Rails
+* Install Rails on the GW ScholarSpace server:
 
-        % gem install rails -v 4.2.3 -N
+        % gem install rails -v 4.2.5 -N
         
 * Create the directory structure
 
@@ -279,7 +281,6 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         
         % sudo cp dist/solr-4.10.4.war /var/lib/tomcat7/webapps/solr.war
         % sudo cp -R example/lib/ext/* /var/lib/tomcat7/webapps/solr/WEB-INF/lib
-        % sudo cp -R contrib /var/lib/tomcat7/webapps/solr/WEB-INF/lib/
         
   Create the log4j.properties file in /var/lib/tomcat7/webapps/solr/WEB-INF/classes/ with the one from the tomcat_conf/solr folder in the repo.
         
@@ -311,9 +312,11 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 
         % sudo service tomcat7 restart
 
-### Install
+### Install the GW ScholarSpace app:
 
-* Get the gw-sufia code:
+On the GW ScholarSpace server:
+
+* Get the GW ScholarSpace code:
 
         % git clone https://github.com/gwu-libraries/scholarspace.git
 
@@ -394,12 +397,13 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 
   If your Solr instance is on a different server from the GW ScholarSpace application do the following:
 
-        Download the /opt/scholarspace/jetty/solr/lib/contrib/extraction folder from the GW ScholarSpace application server via SFTP.
-        On the Solr server, remove the /opt/solr/contrib/extraction directory that was installed with Solr 4.10.4:
+  Download the /opt/scholarspace/jetty/solr/lib/contrib/extraction folder from the GW ScholarSpace application server via SFTP.
+
+  On the Solr server, remove the /opt/solr/contrib/extraction directory that was installed with Solr 4.10.4:
         
         % rm -rf /opt/solr/contrib/extraction
         
-        Upload the extraction folder from hydra-jetty to the server with your Solr instance into: /opt/solr/contrib/
+  Upload the extraction folder from hydra-jetty to the server with your Solr instance into: /opt/solr/contrib/
         
         % sudo service tomcat7 restart
         
