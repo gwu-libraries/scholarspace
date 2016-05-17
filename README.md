@@ -191,7 +191,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 * Install ubuntu 14.04 LTS package dependencies:
 
         % sudo apt-get update
-        % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2 tomcat7 libreoffice libcurl4-openssl-dev
+        % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2 tomcat7 libreoffice libcurl4-openssl-dev apache2-threaded-dev libapr1-dev libaprutil1-dev apache2-mpm-worker apache2-threaded-dev
 
 * Install Java 8 for 14.04 (on the Solr/Fedora server):
 
