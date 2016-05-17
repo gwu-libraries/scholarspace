@@ -467,9 +467,10 @@ has logged in at least once.
 
   Copy the passenger.conf file from /opt/scholarspace/apache2_conf folder to /etc/apache2/conf-available/passenger.conf
    
-* Enable the passenger.conf file     
+* Enable the passenger.conf file and the rewrite Apache mod
 
         % sudo a2enconf passenger.conf
+        % sudo a2enmod rewrite
         % sudo service apache2 restart
 
 * Create and enable an Apache2 virtual host
