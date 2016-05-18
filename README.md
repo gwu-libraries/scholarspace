@@ -191,7 +191,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 * Install ubuntu 14.04 LTS package dependencies:
 
         % sudo apt-get update
-        % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2 tomcat7 libreoffice libcurl4-openssl-dev
+        % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2 tomcat7 libreoffice libcurl4-openssl-dev apache2-threaded-dev libapr1-dev libaprutil1-dev apache2-mpm-worker apache2-threaded-dev
 
 * Install Java 8 for 14.04 (on the Solr/Fedora server):
 
@@ -467,9 +467,10 @@ has logged in at least once.
 
   Copy the passenger.conf file from /opt/scholarspace/apache2_conf folder to /etc/apache2/conf-available/passenger.conf
    
-* Enable the passenger.conf file     
+* Enable the passenger.conf file and the rewrite Apache mod
 
         % sudo a2enconf passenger.conf
+        % sudo a2enmod rewrite
         % sudo service apache2 restart
 
 * Create and enable an Apache2 virtual host
