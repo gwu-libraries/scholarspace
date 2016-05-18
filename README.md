@@ -124,8 +124,8 @@ Installation for Development
 
   In order to enable the contact form page to send email when the user clicks Send,
 set the following properties in config/initializers/sufia.rb :
-  * config.action_mailer.contact_email
-  * config.action_mailer.from_email
+  * config.contact_email
+  * config.from_email
 
 Copy config/initializers/setup_mail.rb.template to config/initializers/setup_mail.rb .
 Set the SMTP credentials for the user as whom the app will send email.
@@ -407,7 +407,7 @@ On the GW ScholarSpace server:
         
         % sudo service tomcat7 restart
         
-* Install fits.sh version 0.6.2 (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest 0.6.2 download)
+* On the GW ScholarSpace server, install fits.sh version 0.6.2 (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest 0.6.2 download)
 
         % cd /usr/local/bin
         % sudo curl http://projects.iq.harvard.edu/files/fits/files/fits-0.6.2.zip -o fits-0.6.2.zip
@@ -417,14 +417,14 @@ On the GW ScholarSpace server:
 
 ### Configure ImageMagick policies
 
-* Copy imagemagick_conf/policy.xml to /etc/ImageMagick (overwrite the default policy.xml)
+* On the GW ScholarSpace server, copy imagemagick_conf/policy.xml to /etc/ImageMagick (overwrite the default policy.xml)
 
 ### Configure Contact form emailing
 
   In order to enable the contact form page to send email when the user clicks Send,
 set the following properties in config/initializers/sufia.rb :
-  * config.action_mailer.contact_email
-  * config.action_mailer.from_email
+  * config.contact_email
+  * config.from_email
 
 Copy config/initializers/setup_mail.rb.template to config/initializers/setup_mail.rb .
 Set the SMTP credentials for the user as whom the app will send email.
