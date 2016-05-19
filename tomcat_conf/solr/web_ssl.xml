@@ -55,6 +55,10 @@
       <transport-guarantee>CONFIDENTIAL</transport-guarantee>
     </user-data-constraint>
   </security-constraint>
+  
+  <security-role>
+    <role-name>solrAdmin</role-name>
+  </security-role>
 
   <login-config>
     <auth-method>BASIC</auth-method>
