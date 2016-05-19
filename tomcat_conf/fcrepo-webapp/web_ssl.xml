@@ -56,6 +56,11 @@
       <transport-guarantee>CONFIDENTIAL</transport-guarantee>
     </user-data-constraint>
   </security-constraint>
+  
+  <security-role>
+    <role-name>fedoraAdmin</role-name>
+    <role-name>fedoraUser</role-name>
+  </security-role>
 
   <login-config>
     <auth-method>BASIC</auth-method>
