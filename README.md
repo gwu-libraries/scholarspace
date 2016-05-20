@@ -34,7 +34,7 @@ Installation for Development
 
 * Install Rails
 
-        % gem install rails -v 4.2.5 -N
+        % gem install rails -v 4.2.6 -N
 
 ### Install
 
@@ -217,7 +217,7 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 
 * Install Rails on the GW ScholarSpace server:
 
-        % gem install rails -v 4.2.5 -N
+        % gem install rails -v 4.2.6 -N
         
 * Create the directory structure
 
