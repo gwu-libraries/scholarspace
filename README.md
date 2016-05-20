@@ -481,7 +481,7 @@ has logged in at least once.
 
         % sudo a2enmod ssl
 
-  Generate certificates and place them in ... TODO
+  Generate certificates and place them in paths referenced in scholarspace-ssl.conf (modify the paths in scholarspace-ssl.conf if needed).  Cert file names should also match.
   
         % sudo a2dissite 000-default.conf
         % sudo a2ensite scholarspace.conf
