@@ -49,7 +49,6 @@
       <http-method>POST</http-method>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>fedoraUser</role-name>
       <role-name>fedoraAdmin</role-name>
     </auth-constraint>
     <user-data-constraint>
@@ -59,7 +58,6 @@
   
   <security-role>
     <role-name>fedoraAdmin</role-name>
-    <role-name>fedoraUser</role-name>
   </security-role>
 
   <login-config>
