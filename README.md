@@ -475,9 +475,17 @@ has logged in at least once.
 
 * Create and enable an Apache2 virtual host
 
-  Copy the scholarspace.conf file from the /opt/scholarspace/apache2_conf folder to /etc/apache2/sites-available/scholarspace.conf
+  Copy the scholarspace.conf and scholarspace-ssl.conf files from the /opt/scholarspace/apache2_conf folder to /etc/apache2/sites-available/scholarspace.conf
+
+  Enable modssl
+
+        % sudo a2enmod ssl
+
+  Generate certificates and place them in ... TODO
   
+        % sudo a2dissite 000-default.conf
         % sudo a2ensite scholarspace.conf
+        % sudo a2ensite scholarspace-ssl.conf
         
 * Install mod_xsendfile (on the GW Scholarspace application server, if deploying on separate servers)
 
