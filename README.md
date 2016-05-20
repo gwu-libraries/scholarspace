@@ -423,6 +423,28 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 
 * Copy imagemagick_conf/policy.xml to /etc/ImageMagick (overwrite the default policy.xml)
 
+### Configure the minter-state file path
+
+  * Create a minter folder
+
+        % sudo mkdir /opt/scholarspace/scholarspace_minter
+        % sudo chown -R scholarspace_user:scholarspace_group /opt/scholarspace/scholarspace_minter
+
+  * Uncomment config.minter_statefile in config/initializers/sufia.rb
+
+        # config.minter_statefile = '/opt/scholarspace/scholarspace_minter'
+
+### Configure the tmp path
+  
+  * Create a tmp folder  
+
+        % sudo mkdir /opt/scholarspace/scholarspace_tmp
+        % sudo chown -R scholarspace_user:scholarspace_group /opt/scholarspace/scholarspace_tmp
+
+  * Uncomment config.temp_file_base in config/initializers/sufia.rb
+
+        # config.temp_file_base = '/opt/scholarspace/scholarspace_tmp'
+
 ### Configure Contact form emailing
 
   In order to enable the contact form page to send email when the user clicks Send,
