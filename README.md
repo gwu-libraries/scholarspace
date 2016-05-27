@@ -562,10 +562,10 @@ These instructions are for redirecting port 8080 traffic on Tomcat to port 8443 
 
 *  Generate your SSL certificates and key using the instructions provided here: https://github.com/gwu-libraries/ssl_howto
 
-*  Copy the server_ssl.xml example from this repo to /etc/tomcat
-        
-        % sudo cp server_ssl.xml /etc/tomcat/server.xml
+*  Copy the server_ssl.xml example from this repo to /etc/tomcat7/server.xml (note that you will need to overwrite `server.xml` (no ssl in the file name) with the contents of `server_ssl.xml` (ssl in the file name) from the repo.
 
+        % sudo cp server_ssl.xml /etc/tomcat7/server.xml
+        
 *  Edit /etc/tomcat/server.xml and replace the dummy values for the following lines with your certificates and keys:
 	```
         SSLCertificateFile="/etc/ssl/certs/yourservername.cer"
