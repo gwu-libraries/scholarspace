@@ -556,9 +556,13 @@ to upload items and edit the items that they have uploaded (plus items transferr
 ### (Optional) Add SSL to Fedora and Solr Connections
 These instructions are for redirecting port 8080 traffic on Tomcat to port 8443 and running SSL using the Apache Portable Runtime (APR).
 
- * Install Tomcat dependencies
+* Install Tomcat dependencies
        
-        % sudo apt-get install libapr1 libapr1-dev
+        % sudo apt-get install libapr1 libapr1-dev libtcnative-1
+
+*  Add the `tomcat7` user to the `ssl-cert` group in `/etc/group`
+
+        % sudo vi /etc/group
 
 *  Generate your SSL certificates and key using the instructions provided here: https://github.com/gwu-libraries/ssl_howto
 
