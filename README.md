@@ -15,7 +15,7 @@ Installation for Development
 * Install ubuntu package dependencies:
 
         % sudo apt-get update
-        % sudo apt-get install git postgresql libpq-dev redis-server unzip openjdk-7-jre clamav-daemon curl imagemagick libapache2-mod-shib2
+        % sudo apt-get install git postgresql libpq-dev redis-server unzip openjdk-7-jre clamav-daemon curl imagemagick libapache2-mod-shib2 libapr1 libapr1-dev
 
 * Install RVM (for installation via SSL and other RVM installation information, refer to https://rvm.io/rvm/install)
 
@@ -34,11 +34,11 @@ Installation for Development
 
 * Install Rails
 
-        % gem install rails -v 4.2.5 -N
+        % gem install rails -v 4.2.6 -N
 
 ### Install
 
-* Get the gw-sufia code:
+* Get the GW ScholarSpace code:
 
         % git clone https://github.com/gwu-libraries/scholarspace.git
 
@@ -124,8 +124,8 @@ Installation for Development
 
   In order to enable the contact form page to send email when the user clicks Send,
 set the following properties in config/initializers/sufia.rb :
-  * config.action_mailer.contact_email
-  * config.action_mailer.from_email
+  * config.contact_email
+  * config.from_email
 
 Copy config/initializers/setup_mail.rb.template to config/initializers/setup_mail.rb .
 Set the SMTP credentials for the user as whom the app will send email.
@@ -191,9 +191,9 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 * Install ubuntu 14.04 LTS package dependencies:
 
         % sudo apt-get update
-        % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2 tomcat7 libreoffice libcurl4-openssl-dev
+        % sudo apt-get install git postgresql libpq-dev redis-server unzip clamav-daemon curl imagemagick libapache2-mod-shib2 tomcat7 libreoffice libcurl4-openssl-dev apache2-threaded-dev libapr1-dev libaprutil1-dev apache2-mpm-worker apache2-threaded-dev
 
-* Install Java 8 for 14.04
+* Install Java 8 for 14.04 (on the Solr/Fedora server):
 
         % sudo apt-add-repository ppa:webupd8team/java
         % sudo apt-get update
@@ -202,6 +202,8 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
        
 * Install RVM for multi-users (for installation via SSL and other RVM installation information, refer to https://rvm.io/rvm/install) Installs RVM to /usr/local/rvm
 
+   On the GW ScholarSpace server:
+
         % curl -L https://get.rvm.io | sudo bash -s stable
         % source ~/.rvm/scripts/rvm
         % rvm install ruby-2.2.1
@@ -209,13 +211,13 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         
         Add users to the rvm group
 
-* (Optional) Set up Shibboleth integartion
+* (Optional) Set up Shibboleth integration on the GW ScholarSpace server:
 
   Please refer to https://github.com/gwu-libraries/shibboleth for the recommended steps for setting up the Shibboleth integration.
 
-* Install Rails
+* Install Rails on the GW ScholarSpace server:
 
-        % gem install rails -v 4.2.3 -N
+        % gem install rails -v 4.2.6 -N
         
 * Create the directory structure
 
@@ -279,7 +281,6 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         
         % sudo cp dist/solr-4.10.4.war /var/lib/tomcat7/webapps/solr.war
         % sudo cp -R example/lib/ext/* /var/lib/tomcat7/webapps/solr/WEB-INF/lib
-        % sudo cp -R contrib /var/lib/tomcat7/webapps/solr/WEB-INF/lib/
         
   Create the log4j.properties file in /var/lib/tomcat7/webapps/solr/WEB-INF/classes/ with the one from the tomcat_conf/solr folder in the repo.
         
@@ -287,21 +288,13 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
    
         /var/log/solr/solr.log { copytruncate daily rotate 5 compress missingok create 640 tomcat7 tomcat7 }
         
-* Set up fcrepo-message-consumer
+* Set up fcrepo with audit support
 
         % cd /opt/install
-        % wget http://central.maven.org/maven2/org/fcrepo/fcrepo-message-consumer-webapp/4.3.0/fcrepo-message-consumer-webapp-4.3.0.war
-        % sudo cp fcrepo-message-consumer-webapp-4.3.0.war /var/lib/tomcat7/webapps/fcrepo-message-consumer.war
-        
-  Replace or create the indexer-core.xml file in /var/lib/tomcat7/webapps/fcrepo-message-consumer/WEB-INF/classes/spring/indexer-core.xml with the one from the tomcat_conf/fcrepo-message-consumer folder in the repo.  Edit indexer-core.xml and set the `fedoraUsername` and the `fedoraPassword` values.
-        
-* Set up fcrepo
+        % wget https://github.com/fcrepo4-exts/fcrepo-webapp-plus/releases/download/fcrepo-webapp-plus-4.5.1/fcrepo-webapp-plus-audit-4.5.1.war
+        % cp fcrepo-webapp-plus-audit-4.5.1.war /var/lib/tomcat7/webapps/fcrepo.war
 
-        % cd /opt/install
-        % wget https://repo1.maven.org/maven2/org/fcrepo/fcrepo-webapp/4.5.0/fcrepo-webapp-4.5.0.war
-        % cp fcrepo-webapp-4.5.0.war /var/lib/tomcat7/webapps/fcrepo-webapp-4.5.0.war
-
-  Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo-webapp-4.5.0/WEB-INF/web.xml with the one from the tomcat_conf/fcrepo-webapp folder in the repo
+  Replace the web.xml file in /var/lib/tomcat7/webapps/fcrepo/WEB-INF/web.xml with the one from the tomcat_conf/fcrepo-webapp folder in the repo
 
 * Ensure tomcat7 library files are (still) all owned by tomcat7
 
@@ -319,16 +312,18 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 
         % sudo service tomcat7 restart
 
-### Install
+### Install the GW ScholarSpace app:
 
-* Get the gw-sufia code:
+On the GW ScholarSpace server:
+
+* Get the GW ScholarSpace code:
 
         % git clone https://github.com/gwu-libraries/scholarspace.git
 
 * Install gems
 
         % cd scholarspace
-        % bundle install --without development
+        % bundle install --without development --deployment
 
 * Create a postgresql user
 
@@ -402,16 +397,17 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 
   If your Solr instance is on a different server from the GW ScholarSpace application do the following:
 
-        Download the /opt/scholarspace/jetty/solr/lib/contrib/extraction folder from the GW ScholarSpace application server via SFTP.
-        On the Solr server, remove the /opt/solr/contrib/extraction directory that was installed with Solr 4.10.4:
+  Download the /opt/scholarspace/jetty/solr/lib/contrib/extraction folder from the GW ScholarSpace application server via SFTP.
+
+  On the Solr server, remove the /opt/solr/contrib/extraction directory that was installed with Solr 4.10.4:
         
         % rm -rf /opt/solr/contrib/extraction
         
-        Upload the extraction folder from hydra-jetty to the server with your Solr instance into: /opt/solr/contrib/
+  Upload the extraction folder from hydra-jetty to the server with your Solr instance into: /opt/solr/contrib/
         
         % sudo service tomcat7 restart
         
-* Install fits.sh version 0.6.2 (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest 0.6.2 download)
+* On the GW ScholarSpace server, install fits.sh version 0.6.2 (check [FITS](http://projects.iq.harvard.edu/fits/downloads) for the latest 0.6.2 download)
 
         % cd /usr/local/bin
         % sudo curl http://projects.iq.harvard.edu/files/fits/files/fits-0.6.2.zip -o fits-0.6.2.zip
@@ -421,14 +417,14 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 
 ### Configure ImageMagick policies
 
-* Copy imagemagick_conf/policy.xml to /etc/ImageMagick (overwrite the default policy.xml)
+* On the GW ScholarSpace server, copy imagemagick_conf/policy.xml to /etc/ImageMagick (overwrite the default policy.xml)
 
 ### Configure Contact form emailing
 
   In order to enable the contact form page to send email when the user clicks Send,
 set the following properties in config/initializers/sufia.rb :
-  * config.action_mailer.contact_email
-  * config.action_mailer.from_email
+  * config.contact_email
+  * config.from_email
 
 Copy config/initializers/setup_mail.rb.template to config/initializers/setup_mail.rb .
 Set the SMTP credentials for the user as whom the app will send email.
@@ -463,7 +459,7 @@ has logged in at least once.
 
 * Set up Passenger
 
-        % gem install passenger
+        % gem install passenger -v 5.0.19
         % passenger-install-apache2-module
         Select Ruby from the list of languages
         
@@ -471,16 +467,25 @@ has logged in at least once.
 
   Copy the passenger.conf file from /opt/scholarspace/apache2_conf folder to /etc/apache2/conf-available/passenger.conf
    
-* Enable the passenger.conf file     
+* Enable the passenger.conf file and the rewrite Apache mod
 
         % sudo a2enconf passenger.conf
+        % sudo a2enmod rewrite
         % sudo service apache2 restart
 
 * Create and enable an Apache2 virtual host
 
-  Copy the scholarspace.conf file from the /opt/scholarspace/apache2_conf folder to /etc/apache2/sites-available/scholarspace.conf
+  Copy the scholarspace.conf and scholarspace-ssl.conf files from the /opt/scholarspace/apache2_conf folder to /etc/apache2/sites-available/scholarspace.conf
+
+  Enable modssl
+
+        % sudo a2enmod ssl
+
+  Generate certificates and place them in paths referenced in scholarspace-ssl.conf (modify the paths in scholarspace-ssl.conf if needed).  Cert file names should also match.
   
+        % sudo a2dissite 000-default.conf
         % sudo a2ensite scholarspace.conf
+        % sudo a2ensite scholarspace-ssl.conf
         
 * Install mod_xsendfile (on the GW Scholarspace application server, if deploying on separate servers)
 
@@ -547,3 +552,41 @@ to upload items and edit the items that they have uploaded (plus items transferr
   Add a line similar to the following:
 
         0 5 * * * /opt/scholarspace/script/import_stats.sh production
+        
+### (Optional) Add SSL to Fedora and Solr Connections
+These instructions are for redirecting port 8080 traffic on Tomcat to port 8443 and running SSL using the Apache Portable Runtime (APR).
+
+* Install Tomcat dependencies
+       
+        % sudo apt-get install libapr1 libapr1-dev libtcnative-1
+
+*  Add the `tomcat7` user to the `ssl-cert` group in `/etc/group`
+
+        % sudo vi /etc/group
+
+*  Generate your SSL certificates and key using the instructions provided here: https://github.com/gwu-libraries/ssl_howto
+
+*  Copy the server_ssl.xml example from this repo to /etc/tomcat7/server.xml (note that you will need to overwrite `server.xml` (no ssl in the file name) with the contents of `server_ssl.xml` (ssl in the file name) from the repo.
+
+        % sudo cp server_ssl.xml /etc/tomcat7/server.xml
+        
+*  Edit /etc/tomcat/server.xml and replace the dummy values for the following lines with your certificates and keys:
+	```
+        SSLCertificateFile="/etc/ssl/certs/yourservername.cer"
+        SSLCertificateChainFile="/etc/ssl/certs/yourservername.cer"
+        SSLCertificateKeyFile="/etc/ssl/private/yourservername.pem"
+	```
+*  Create a symbolic link to libtcnative1.so to address a Ubuntu/Tomcat bug
+        
+        % sudo ln -sv /usr/lib/x86_64-linux-gnu/libtcnative-1.so /usr/lib/
+
+*  Replace the web.xml files for Solr and Fedora with the web_ssl.xml files from the repo:
+
+	```
+	% cp tomcat_conf/fcrepo/web_ssl.xml /var/lib/tomcat7/webapps/fcrepo/WEB-INF/web.xml
+	% cp tomcat_conf/solr/web_ssl.xml /var/lib/tomcat7/webapps/solr/WEB-INF/web.xml
+	```
+
+*  Restart Tomcat and test access over HTTPS
+
+        % sudo service tomcat7 restart
