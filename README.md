@@ -307,6 +307,40 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
   Replace tomcat-users.xml with the tomcat-users.xml file from tomcat_conf folder in the repo.
   
   Edit tomcat-users.xml and replace the "dummypasswords" with your secure passwords.
+  
+* Create a postgresSQL database user for Fedora
+
+        % sudo su - postgres
+        (postgres)% psql
+        postgres=# create user YOURDBUSERNAME with createdb password 'YOURDBPASSWORD';
+
+* Create a postgresSQL database for Fedora
+
+        postgres=# \q
+        (postgres)% createdb -O YOURDBUSERNAME ispn
+        (postgres)% exit
+Note the database name for Fedora must be 'ispn'
+
+* Create a Fedora settings folder
+
+        % sudo mkdir /etc/fcrepo
+        % sudo chown -R tomcat7:tomcat7 /etc/fcrepo
+
+* Copy the infinispan.xml file from the repo
+
+        % cp infinispan.xml /etc/fcrepo/infinispan.xml
+Edit this file with your database username and database password
+
+* Restart Tomcat
+
+        % sudo service tomcat7 restart
+
+* Restore the Fedora Backup
+
+        % curl -X POST -u <FedoraUsername>:<FedoraPassword> --data "/opt/fedora_backups" yourserver.com/fcrepo/rest/fcr:restore
+
+* Log into the Fedora web UI and verify the Fedora repository has restored successfully.
+Diff of v1.2.0 vs. v1.3.0 code
 
 * Restart Tomcat7 Server
 
