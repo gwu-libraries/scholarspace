@@ -430,9 +430,13 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
         % sudo mkdir /opt/scholarspace/scholarspace_minter
         % sudo chown -R scholarspace_user:scholarspace_group /opt/scholarspace/scholarspace_minter
 
+  * If an existing minter-state file exists in /tmp/minter-state copy it to the new folder
+        
+        % cp /tmp/minter-state /opt/scholarspace/scholarspace_minter/
+
   * Uncomment config.minter_statefile in config/initializers/sufia.rb
 
-        # config.minter_statefile = '/opt/scholarspace/scholarspace_minter'
+        # config.minter_statefile = '/opt/scholarspace/scholarspace_minter/minter-state'
 
 ### Configure the tmp path
   
