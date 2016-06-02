@@ -129,7 +129,7 @@ Sufia.config do |config|
   # config.enable_noids = true
 
   # Where to store minter-state file, leave blank for the system temp directory (e.g. /tmp)
-  # config.minter_statefile = '/opt/scholarspace/scholarspace_minter'
+  # config.minter_statefile = '/opt/scholarspace/scholarspace_minter/minter-state'
 
   # Specify a different template for your repository's NOID IDs
   # config.noid_template = ".reeddeeddk"
