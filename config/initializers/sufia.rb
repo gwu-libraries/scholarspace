@@ -116,7 +116,7 @@ Sufia.config do |config|
   config.geonames_username = 'gwscholarspace'
   
   # Where to store tempfiles, leave blank for the system temp directory (e.g. /tmp)
-  # config.temp_file_base = '/home/developer1'
+  # config.temp_file_base = '/opt/scholarspace/scholarspace_tmp'
 
   # Specify the form of hostpath to be used in Endnote exports
   # config.persistent_hostpath = 'http://localhost/files/'
@@ -127,6 +127,9 @@ Sufia.config do |config|
   # Sufia uses NOIDs for files and collections instead of Fedora UUIDs
   # where NOID = 10-character string and UUID = 32-character string w/ hyphens
   # config.enable_noids = true
+
+  # Where to store minter-state file, leave blank for the system temp directory (e.g. /tmp)
+  # config.minter_statefile = '/opt/scholarspace/scholarspace_minter/minter-state'
 
   # Specify a different template for your repository's NOID IDs
   # config.noid_template = ".reeddeeddk"
