@@ -308,6 +308,17 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
   
   Edit tomcat-users.xml and replace the "dummypasswords" with your secure passwords.
   
+* Install postgresql on the Tomcat Server
+
+	% sudo apt-get install postgresql
+
+* Create of backup of the existing Fedora instance (If one exists)
+
+	% sudo mkdir /opt/fedora_backups
+	% sudo chown -R tomcat7:tomcat7 /opt/fedora_backups
+	% curl -X POST -u <FedoraUsername>:<FedoraPassword> --data "/opt/fedora_backups" yourserver.com/fcrepo/rest/fcr:backup
+Verify that a backup was created in /opt/fedora_backups before proceeding
+
 * Create a postgresSQL database user for Fedora
 
         % sudo su - postgres
@@ -335,12 +346,10 @@ Edit this file with your database username and database password
 
         % sudo service tomcat7 restart
 
-* Restore the Fedora Backup
+* Restore the Fedora Backup (If a previous Fedora repository was running on LevelDB)
 
         % curl -X POST -u <FedoraUsername>:<FedoraPassword> --data "/opt/fedora_backups" yourserver.com/fcrepo/rest/fcr:restore
-
-* Log into the Fedora web UI and verify the Fedora repository has restored successfully.
-Diff of v1.2.0 vs. v1.3.0 code
+Validate that the repository has been restored
 
 * Restart Tomcat7 Server
 
