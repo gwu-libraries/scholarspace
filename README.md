@@ -310,13 +310,14 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
   
 * Install postgresql on the Tomcat Server
 
-	% sudo apt-get install postgresql
+        % sudo apt-get install postgresql
 
 * Create of backup of the existing Fedora instance (If one exists)
 
-	% sudo mkdir /opt/fedora_backups
-	% sudo chown -R tomcat7:tomcat7 /opt/fedora_backups
-	% curl -X POST -u <FedoraUsername>:<FedoraPassword> --data "/opt/fedora_backups" yourserver.com/fcrepo/rest/fcr:backup
+        % sudo mkdir /opt/fedora_backups
+        % sudo chown -R tomcat7:tomcat7 /opt/fedora_backups
+        % curl -X POST -u <FedoraUsername>:<FedoraPassword> --data "/opt/fedora_backups" yourserver.com/fcrepo/rest/fcr:backup
+
 Verify that a backup was created in /opt/fedora_backups before proceeding
 
 * Create a postgresSQL database user for Fedora
