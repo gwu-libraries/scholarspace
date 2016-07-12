@@ -215,6 +215,10 @@ Note: Solr, Fedora, PostgreSQL and the GW ScholarSpace application can all be de
 
   Please refer to https://github.com/gwu-libraries/shibboleth for the recommended steps for setting up the Shibboleth integration.
 
+* If Shibboleth has been setup on the GW ScholarSpace Server, enable Shibboleth in the appropriate environment file (ie: config/environments/production.rb):
+
+	config.shibboleth = true
+
 * Install Rails on the GW ScholarSpace server:
 
         % gem install rails -v 4.2.6 -N

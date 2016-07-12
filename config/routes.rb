@@ -2,22 +2,28 @@ Rails.application.routes.draw do
   
   blacklight_for :catalog
 
-  if Rails.env.production?
+  if Rails.application.config.shibboleth == true
     devise_for :users, {
       :controllers => {
         :omniauth_callbacks => 'users/omniauth_callbacks',
       }, :skip => [ :sessions ]
-    }
-    mount Hydra::RoleManagement::Engine => '/'
-
+    }  
+  
     devise_scope :users do
       get 'logout' => 'sessions#destroy', as: :destroy_user_session
       get 'login' => 'sessions#new', as: :new_user_session
     end
+
   else
     devise_for :users
-    mount Hydra::RoleManagement::Engine => '/'
+
+    devise_scope :user do
+      get "/login" => "devise/sessions#new"
+      delete "/logout" => "devise/session#destroy"
+    end
   end
+
+  mount Hydra::RoleManagement::Engine => '/'
 
   Hydra::BatchEdit.add_routes(self)
   # This must be the very last route in the file because it has a catch-all route for 404 errors.
