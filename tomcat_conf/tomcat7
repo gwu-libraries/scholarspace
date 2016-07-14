@@ -25,12 +25,6 @@ JAVA_OPTS="${JAVA_OPTS} -Dfile.encoding=UTF-8 -server"
 JAVA_OPTS="${JAVA_OPTS} -XX:+UseConcMarkSweepGC" # for smaller (< 4GB) heaps
 JAVA_OPTS="${JAVA_OPTS} -XX:+CMSClassUnloadingEnabled" # for use with UseConMarkSweepGC
 #JAVA_OPTS="${JAVA_OPTS} -XX:+UseG1GC" # for larger (> 4GB) heaps
-JAVA_OPTS="${JAVA_OPTS} -Dfile.encoding=UTF-8 -server"
-
-#GC configuration
-#JAVA_OPTS="${JAVA_OPTS} -XX:+UseConcMarkSweepGC" # for smaller (< 4GB) heaps
-#JAVA_OPTS="${JAVA_OPTS} -XX:+CMSClassUnloadingEnabled" # for use with UseConMarkSweepGC
-JAVA_OPTS="${JAVA_OPTS} -XX:+UseG1GC" # for larger (> 4GB) heaps
 JAVA_OPTS="${JAVA_OPTS} -XX:ConcGCThreads=5"
 JAVA_OPTS="${JAVA_OPTS} -XX:MaxGCPauseMillis=200"
 JAVA_OPTS="${JAVA_OPTS} -XX:+DisableExplicitGC"
