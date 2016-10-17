@@ -44,7 +44,5 @@ namespace 'gwss' do
   task "sitemap_queue_generate" => :environment do
     SitemapRegenerateJob.perform_later
   end
-  
-end
 
 end
