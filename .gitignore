@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
+* Ignore sitemap.xml
+public/sitemap.xml
+
 # Ignore locally-specific config files
 config/analytics.yml
 config/database.yml
