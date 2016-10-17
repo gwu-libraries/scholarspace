@@ -3,7 +3,7 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 User-agent: *
 Disallow: /*?file=thumbnail$
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://scholarspace.library.gwu.edu/sitemap.xml
 User-agent: AhrefsBot
 Disallow: /
 User-agent: Pcore-HTTP/v0.23.20
