@@ -34,6 +34,7 @@ Sufia.config do |config|
     "Image" => "Image",
     "Journal" => "Journal",
     "Map or Cartographic Material" => "Map or Cartographic Material",
+    "Meeting Minutes" => "Meeting Minutes",
     "Newsletter" => "Newsletter",
     "Part of Book" => "Part of Book",
     "Poster" => "Poster",
