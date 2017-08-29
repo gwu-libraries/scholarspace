@@ -158,6 +158,7 @@ module Scholarspace
       "GW Institute for Massively Parallel Applications and Computing Technology (IMPACT)" => "GW Institute for Massively Parallel Applications and Computing Technology (IMPACT)",
       "GW Institute of Public Policy" => "GW Institute of Public Policy",
       "GW Libraries" => "GW Libraries",
+      "GW Program on Extremism" => "GW Program on Extremism",
       "Health Policy & Management" => "Health Policy & Management",
       "Health Policy Forum, National" => "Health Policy Forum, National",
       "Health Workforce Research Center, GW" => "Health Workforce Research Center, GW",
