@@ -159,6 +159,7 @@ module Scholarspace
       "GW Institute of Public Policy" => "GW Institute of Public Policy",
       "GW Libraries" => "GW Libraries",
       "GW Program on Extremism" => "GW Program on Extremism",
+      "GW Undergraduate Review" => "GW Undergraduate Review",
       "Health Policy & Management" => "Health Policy & Management",
       "Health Policy Forum, National" => "Health Policy Forum, National",
       "Health Workforce Research Center, GW" => "Health Workforce Research Center, GW",
