@@ -43,6 +43,7 @@ Sufia.config do |config|
     "Report" => "Report",
     "Research Paper" => "Research Paper",
     "Software or Program Code" => "Software or Program Code",
+    "Thesis" => "Thesis",
     "Video" => "Video",
     "Other" => "Other",
   }
