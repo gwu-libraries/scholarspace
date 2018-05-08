@@ -67,6 +67,7 @@ Sufia.config do |config|
     "Report" => "http://schema.org/CreativeWork",
     "Research Paper" => "http://schema.org/ScholarlyArticle",
     "Software or Program Code" => "http://schema.org/Code",
+    "Thesis" => "http://bib.schema.org/Thesis",
     "Video" => "http://schema.org/VideoObject",
     "Other" => "http://schema.org/CreativeWork",
   }
