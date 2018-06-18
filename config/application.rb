@@ -271,6 +271,7 @@ module Scholarspace
       "Political Science" => "Political Science",
       "Prevention & Community Health" => "Prevention & Community Health",
       "Professional Psychology" => "Professional Psychology",
+      "Project Management" => "Project Management",
       "Project on Humanitarian Governance" => "Project on Humanitarian Governance",
       "Project on Middle East Political Science (POMEPS)" => "Project on Middle East Political Science (POMEPS)",
       "Prostate Cancer Clinic" => "Prostate Cancer Clinic",
