@@ -588,6 +588,24 @@ to upload items and edit the items that they have uploaded (plus items transferr
 
 * Note that removing users from roles through the /roles interface is currently broken, and must be accomplished through the rails console.
 
+### (Optional) Generate Sitemap for content
+
+* Replace 'example.com' in `config/sitemap.xml` with your server URL:
+
+         Sitemap::Generator.instance.load(host: 'example.com') do
+
+* Replace `https://example.com` in public/robots.txt with your server URL:
+
+         Sitemap: https://example.com/sitemap.xml
+	 
+* Run the sitemap generator rake task:
+
+         rake gwss:sitemap_queue_generate RAILS_ENV=production
+	 
+* Verify the `sitemap.xml` file has been created:
+
+         cat public/sitemap.xml
+
 ### (Optional) Add Google Analytics
 
 * Enable Google Analytics in config/initializers/sufia.rb by editing the following lines:

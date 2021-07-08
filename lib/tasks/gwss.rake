@@ -39,5 +39,10 @@ namespace 'gwss' do
     contentadminrole = Role.find_or_create_by(name: 'content-admin')
     contentadminrole.save
   end
+  
+  desc "Queues a job to (re)generate the sitemap.xml"
+  task "sitemap_queue_generate" => :environment do
+    SitemapRegenerateJob.perform_later
+  end
 
 end
